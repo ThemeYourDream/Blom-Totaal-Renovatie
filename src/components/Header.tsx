@@ -45,7 +45,7 @@ export default function Header() {
             {/* CTA Button */}
             <Link
               href="/offerte"
-              className="hidden sm:inline-block px-4 py-2 bg-brand-red text-white font-medium rounded hover:bg-red-700 transition-colors"
+              className="hidden sm:inline-block px-6 py-2 bg-brand-red text-white font-medium rounded hover:bg-red-700 hover:shadow-md hover:scale-105 transition-all duration-300"
             >
               Offerte
             </Link>
