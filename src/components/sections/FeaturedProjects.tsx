@@ -3,10 +3,29 @@ import Link from 'next/link';
 import { projects } from '@/data/projects';
 
 export default function FeaturedProjects() {
-  const featuredProjects = projects.filter((p) => p.published).slice(0, 4);
+  const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
+  // Duplicate for seamless loop
+  const carouselProjects = [...featuredProjects, ...featuredProjects];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <style>{`
+        @keyframes scroll-carousel {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-100% / 2));
+          }
+        }
+        .carousel-scroll {
+          animation: scroll-carousel 30s linear infinite;
+        }
+        .carousel-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-4">
@@ -17,16 +36,16 @@ export default function FeaturedProjects() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-8 md:p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {featuredProjects.map((project) => (
-              <Link key={project.id} href={`/projecten/${project.slug}`} className="group">
-                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-40 md:h-48">
+        <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-8 md:p-12 overflow-hidden">
+          <div className="carousel-scroll flex gap-4 mb-12" style={{ width: 'fit-content' }}>
+            {carouselProjects.map((project, idx) => (
+              <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0">
+                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-40 md:h-48 w-56 md:w-64 group-hover:shadow-xl transition-shadow">
                   <Image
                     src={project.images.main}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:opacity-80 transition-opacity"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
               </Link>
