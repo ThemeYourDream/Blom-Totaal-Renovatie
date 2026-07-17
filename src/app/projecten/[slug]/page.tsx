@@ -64,15 +64,13 @@ export default async function ProjectPage({ params }: Props) {
         <h2 className="font-heading font-bold text-2xl mb-8">Fotogalerij</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {allImages.map((image, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-lg bg-gray-200 h-96"
-            >
+            <div key={index} className="relative overflow-hidden rounded-lg bg-gray-200">
               <Image
                 src={image}
                 alt={`${project.title} foto ${index + 1}`}
-                fill
-                className="object-cover"
+                width={800}
+                height={600}
+                className="w-full h-auto"
               />
             </div>
           ))}
