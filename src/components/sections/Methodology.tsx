@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Methodology() {
   const [activeStep, setActiveStep] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   const steps = [
     { number: '1', title: 'Kennismaking', description: 'We leren u en uw project kennen', details: 'Persoonlijk contact met u als klant. Wij nemen de tijd om alles goed te begrijpen.' },
@@ -22,7 +23,11 @@ export default function Methodology() {
       const sectionStart = rect.top;
       const windowHeight = window.innerHeight;
 
-      if (sectionStart < windowHeight && rect.bottom > 0) {
+      // Check if section is in view
+      const inView = sectionStart < windowHeight && rect.bottom > 0;
+      setIsVisible(inView);
+
+      if (inView) {
         const progress = Math.max(0, Math.min(1, (windowHeight - sectionStart) / (windowHeight + rect.height)));
         const stepIndex = Math.min(Math.floor(progress * steps.length), steps.length - 1);
         setActiveStep(stepIndex);
@@ -76,16 +81,24 @@ export default function Methodology() {
         </div>
       </div>
 
-      {/* Fixed progress dots */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 bg-white px-4 py-6 rounded-full shadow-lg">
+      {/* Fixed progress dots - only visible in methodology section */}
+      <div
+        className={`fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 bg-white px-4 py-6 rounded-full shadow-lg transition-opacity duration-300 ${
+          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index <= activeStep ? 'bg-brand-red scale-125' : 'bg-gray-300'
+            className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
+              index <= activeStep
+                ? 'bg-brand-red text-white scale-125'
+                : 'bg-gray-300 text-gray-500'
             }`}
             title={step.title}
-          />
+          >
+            {step.number}
+          </div>
         ))}
       </div>
     </section>
