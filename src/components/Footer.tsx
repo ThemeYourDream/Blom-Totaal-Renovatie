@@ -111,14 +111,6 @@ export default function Footer() {
                   {siteConfig.business.email}
                 </a>
               </div>
-              <div className="flex gap-4 mt-4">
-                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
-                  <Image src="/images/logo instagram footer.jpg" alt="Instagram" width={24} height={24} />
-                </a>
-                <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Facebook">
-                  <Image src="/images/Facebook logo footer.png" alt="Facebook" width={24} height={24} />
-                </a>
-              </div>
             </div>
           </div>
         </div>
