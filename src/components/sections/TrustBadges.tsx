@@ -22,8 +22,8 @@ export default function TrustBadges() {
     },
     {
       icon: (
-        <svg className="w-12 h-12 mx-auto text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg className="w-12 h-12 mx-auto text-brand-red" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
         </svg>
       ),
       label: 'Volledig Verzekerd',
