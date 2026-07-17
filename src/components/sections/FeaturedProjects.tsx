@@ -7,19 +7,30 @@ export default function FeaturedProjects() {
   // Duplicate for seamless loop
   const carouselProjects = [...featuredProjects, ...featuredProjects];
 
+  // Calculate item width and total width
+  const itemWidthMobile = 160 + 8; // w-40 (160px) + gap-2 (8px)
+  const itemWidthDesktop = 256 + 16; // w-64 (256px) + gap-4 (16px)
+  const totalItemsMobile = carouselProjects.length * itemWidthMobile;
+  const totalItemsDesktop = carouselProjects.length * itemWidthDesktop;
+
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
       <style>{`
-        @keyframes scroll-carousel {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-100% / 2));
-          }
+        @keyframes scroll-carousel-mobile {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-${totalItemsMobile / 2}px); }
+        }
+        @keyframes scroll-carousel-desktop {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-${totalItemsDesktop / 2}px); }
         }
         .carousel-scroll {
-          animation: scroll-carousel 30s linear infinite;
+          animation: scroll-carousel-mobile 40s linear infinite;
+        }
+        @media (min-width: 768px) {
+          .carousel-scroll {
+            animation: scroll-carousel-desktop 45s linear infinite;
+          }
         }
         .carousel-scroll:hover {
           animation-play-state: paused;
@@ -37,7 +48,7 @@ export default function FeaturedProjects() {
         </div>
 
         <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-4 md:p-12 overflow-hidden">
-          <div className="carousel-scroll flex gap-2 md:gap-4 mb-12" style={{ width: 'fit-content' }}>
+          <div className="carousel-scroll flex gap-2 md:gap-4 mb-12">
             {carouselProjects.map((project, idx) => (
               <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0">
                 <div className="relative overflow-hidden rounded-lg bg-gray-200 h-32 md:h-48 w-40 md:w-64 group-hover:shadow-xl transition-shadow">
