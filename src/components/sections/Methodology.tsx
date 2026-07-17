@@ -7,11 +7,11 @@ export default function Methodology() {
   const [isVisible, setIsVisible] = useState(false);
 
   const steps = useMemo(() => [
-    { number: '1', title: 'Kennismaking', description: 'We leren u en uw project kennen', details: 'Persoonlijk contact met u als klant. Wij nemen de tijd om alles goed te begrijpen.' },
-    { number: '2', title: 'Opname op locatie', description: 'Grondige inspectie en meting', details: 'We bezoeken ter plaatse en maken een gedetailleerde opname van het werk.' },
-    { number: '3', title: 'Duidelijke offerte', description: 'Heldere en eerlijke offerte', details: 'Transparante prijsopgave zonder verrassingen. Alles duidelijk uitgelegd.' },
-    { number: '4', title: 'Planning en uitvoering', description: 'Afgestemd op uw wensen', details: 'Vakkundig werk met duidelijke planning en regelmatig contact.' },
-    { number: '5', title: 'Oplevering', description: 'Nette en zorgvuldige afwerking', details: 'Volledig afgewerkt werk. U bent tevreden en we hebben het beloofd werk gedaan.' },
+    { number: '1', title: 'We leren elkaar kennen', description: 'Persoonlijk gesprek over uw plan', details: 'We komen langs, drinken koffie, praten over wat u wilt. Geen formulieren, gewoon begrijpen wat u nodig heeft.' },
+    { number: '2', title: 'We kijken goed', description: 'Controleren en opmeten', details: 'We inspecteren het werk ter plaatse. Geen verrassingen later. We weten precies wat er nodig is.' },
+    { number: '3', title: 'Helder aanbod', description: 'Eerlijke prijs, duidelijk uitgelegd', details: 'U krijgt een offerte die u snapt. Geen verborgen kosten. Wat je ziet is wat je krijgt.' },
+    { number: '4', title: 'We pakken het aan', description: 'Vakkundig werk met duidelijke planning', details: 'Wij voeren het werk uit zoals afgesproken. U hoort regelmatig hoe het gaat. Melvin staat ervoor.' },
+    { number: '5', title: 'Klaar en blij', description: 'Afgewerkt werk, tevreden klant', details: 'Het werk is af. U kunt ervan genieten. We zeggen pas klaar als u tevreden bent.' },
   ], []);
 
   useEffect(() => {
