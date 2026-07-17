@@ -83,7 +83,7 @@ export default function Methodology() {
 
       {/* Fixed progress dots - only visible in methodology section */}
       <div
-        className={`fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 bg-white px-4 py-6 rounded-full shadow-lg transition-opacity duration-300 ${
+        className={`hidden md:flex fixed right-8 top-1/2 transform -translate-y-1/2 flex-col gap-4 bg-white px-4 py-6 rounded-full shadow-lg transition-opacity duration-300 ${
           isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
