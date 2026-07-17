@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Props) {
       {/* Header */}
       <div className="mb-12">
         <div className="inline-block bg-brand-light px-4 py-2 rounded mb-4 text-sm font-medium text-brand-red">
-          {project.place} — {project.year}
+          {project.place}, {project.year}
         </div>
         <h1 className="font-heading font-bold text-4xl mb-4">{project.title}</h1>
         <p className="text-xl text-brand-dark/70 max-w-2xl">{project.summary}</p>

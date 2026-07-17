@@ -12,12 +12,12 @@ export default function Introduction() {
           </p>
 
           <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
-            Hierdoor kunnen verschillende disciplines goed op elkaar worden afgestemd, terwijl u als klant één duidelijk aanspreekpunt houdt. Geen gedoe met verschillende aannemer of miscommunicatie tussen partijen — wij coördineren alles voor u.
+            Hierdoor kunnen verschillende disciplines goed op elkaar worden afgestemd, terwijl u als klant één duidelijk aanspreekpunt houdt. Geen gedoe met verschillende aannemer of miscommunicatie tussen partijen. Wij coördineren alles voor u.
           </p>
 
           <div className="bg-brand-light rounded-lg p-8 mt-10">
           <p className="text-brand-dark/80 mb-6">
-            Wij werken samen met een vast netwerk van vakbekwame medewerkers. Zo kunnen we alles goed op elkaar afstemmen — of je nu een klein karwei hebt of een complete renovatie.
+            Wij werken samen met een vast netwerk van vakbekwame medewerkers. Zo kunnen we alles goed op elkaar afstemmen, of je nu een klein karwei hebt of een complete renovatie.
           </p>
           <p className="text-brand-dark/80">
             Voor particulieren, bedrijven of VvE's: je hebt één contact bij ons. Geen miscommunicatie, geen gedoe met verschillende aannemer. Gewoon duidelijk, eerlijk en vakkundig werk.

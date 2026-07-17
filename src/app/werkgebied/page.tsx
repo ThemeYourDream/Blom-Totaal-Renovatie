@@ -31,7 +31,7 @@ export default function ServiceAreasPage() {
         <h2 className="font-heading font-bold text-2xl mb-4">Buiten dit gebied</h2>
         <p className="mb-6">
           Voor passende projecten voeren wij ook werkzaamheden buiten deze regio en door heel Nederland uit. Neem
-          gerust contact met ons op als u buiten dit werkgebied bent — we zien graag of we u kunnen helpen.
+          gerust contact met ons op als u buiten dit werkgebied bent. We zien graag of we u kunnen helpen.
         </p>
 
         <h2 className="font-heading font-bold text-2xl mb-4">Waarom regio Arnhem-Nijmegen?</h2>

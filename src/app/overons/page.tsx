@@ -14,7 +14,7 @@ export default function AboutPage() {
       <div className="prose prose-lg max-w-none space-y-6">
         <h2 className="font-heading font-bold text-2xl">Wie zijn wij?</h2>
         <p className="text-lg text-brand-dark/80">
-          Wij zijn Blom Totaal Renovatie. Al jaren voeren wij renovaties en onderhoudswerkzaamheden uit vanuit Doesburg. Van klein schilderwerk tot complete woningrenovaties — wij doen het.
+          Wij zijn Blom Totaal Renovatie. Al jaren voeren wij renovaties en onderhoudswerkzaamheden uit vanuit Doesburg. Van klein schilderwerk tot complete woningrenovaties. Wij doen het.
         </p>
 
         <h2 className="font-heading font-bold text-2xl">Hoe werken wij?</h2>

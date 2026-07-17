@@ -21,7 +21,7 @@ export default function FeaturedServices() {
             Onze diensten
           </h2>
           <p className="text-center text-brand-dark/60 max-w-2xl mx-auto">
-            Van complete renovaties tot specifieke werkzaamheden — wij voeren alle disciplines uit
+            Van complete renovaties tot specifieke werkzaamheden. Wij voeren alle disciplines uit
           </p>
         </div>
 
