@@ -127,19 +127,19 @@ export default function Footer() {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="inline-block hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
-                <Image src="/images/logo instagram footer.jpg" alt="Instagram" width={32} height={32} />
+                <Image src="/images/logo instagram footer.jpg" alt="Instagram" width={28} height={28} style={{ borderRadius: '4px' }} />
               </a>
               <a
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="inline-block hover:opacity-80 transition-opacity"
                 aria-label="Facebook"
               >
-                <Image src="/images/Facebook logo footer.png" alt="Facebook" width={32} height={32} />
+                <Image src="/images/Facebook logo footer.png" alt="Facebook" width={28} height={28} style={{ borderRadius: '4px' }} />
               </a>
             </div>
 
