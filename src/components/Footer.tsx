@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { getTelLink, getMailLink } from '@/lib/utils';
@@ -111,11 +112,11 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex gap-4 mt-4">
-                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors" aria-label="Instagram">
-                  📸
+                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
+                  <Image src="/images/logo instagram footer.jpg" alt="Instagram" width={24} height={24} />
                 </a>
-                <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors" aria-label="Facebook">
-                  f
+                <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Facebook">
+                  <Image src="/images/Facebook logo footer.png" alt="Facebook" width={24} height={24} />
                 </a>
               </div>
             </div>
@@ -129,24 +130,24 @@ export default function Footer() {
             <p className="text-sm text-gray-300">&copy; {currentYear} {siteConfig.name}. Alle rechten voorbehouden.</p>
 
             {/* Center: Social Media */}
-            <div className="flex gap-6 text-center">
+            <div className="flex gap-6">
               <a
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg hover:text-brand-red transition-colors font-medium"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
-                Instagram
+                <Image src="/images/logo instagram footer.jpg" alt="Instagram" width={32} height={32} />
               </a>
               <a
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg hover:text-brand-red transition-colors font-medium"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="Facebook"
               >
-                Facebook
+                <Image src="/images/Facebook logo footer.png" alt="Facebook" width={32} height={32} />
               </a>
             </div>
 
