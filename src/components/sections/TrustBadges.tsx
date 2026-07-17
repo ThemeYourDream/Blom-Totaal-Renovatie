@@ -18,7 +18,7 @@ export default function TrustBadges() {
         </svg>
       ),
       label: '5.0/5 Sterren',
-      description: 'Google reviews van tevreden klanten',
+      description: 'Op basis van 11 Google reviews',
     },
     {
       icon: (
