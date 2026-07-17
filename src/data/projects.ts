@@ -45,13 +45,13 @@ export const projects: Project[] = [
   {
     id: 'huissen-renovatie',
     slug: 'huissen-renovatie',
-    title: 'Woningrenovatie Huissen',
+    title: 'Dakrand renovatie schuur Huissen - Houtrotherstel',
     place: 'Huissen',
     year: 2024,
     type: ['totaalrenovatie'],
-    summary: 'Grondige renovatie met nieuwe badkamer, tegelwerk en afwerking.',
-    description: 'Een ouder huis in Huissen dat opnieuw onder handen is genomen. We hebben een moderne badkamer ingebouwd met professioneel tegelwerk, het hele huis opnieuw geschilderd, timmerwerk vernieuwd en stucwerk afgewerkt. Het resultaat is een zorgvuldig gerenoveerde woning met oog voor detail.',
-    services: ['badkamer', 'tegelwerk', 'schilderwerk', 'timmerwerk', 'stucwerk'],
+    summary: 'Professionele dakrand renovatie en houtrotherstel aan schuur in Huissen met metalen afdekking.',
+    description: 'Een schuur in Huissen had ernstige vochtschade aan de houten dakrand. Door langdurige vochtbelasting was het hout op meerdere plaatsen verrot. We hebben de aangetaste delen verwijderd en de dakrand volledig opnieuw opgebouwd met nieuw plaatmateriaal. Daarna is een metalen afdekking aangebracht voor optimale waterdoorvoer en vochtbescherming. De afwerking is uitgevoerd in een donkergrijze kleur. Het resultaat is een stevige, duurzame dakrand die de schuur volledig beschermt tegen weersomstandigheden. Dit soort dakrand renovaties zijn essentieel om verdere structurele schade te voorkomen.',
+    services: ['dakwerk', 'houtrotherstel', 'timmerwerk', 'schilderwerk'],
     images: {
       main: '/images/Huissen (1).jpg',
       gallery: [
