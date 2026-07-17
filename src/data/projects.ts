@@ -65,13 +65,13 @@ export const projects: Project[] = [
   {
     id: 'oosterbeek-renovatie',
     slug: 'oosterbeek-renovatie',
-    title: 'Woningrenovatie Oosterbeek',
+    title: 'Houtrotherstel en buitenschilderwerk Oosterbeek - Kozijnen en erker',
     place: 'Oosterbeek',
     year: 2024,
     type: ['totaalrenovatie'],
-    summary: 'Uitgebreide totaalrenovatie met badkamer, schilderwerk en afwerking.',
-    description: 'Dit was een omvangrijk project in Oosterbeek. De woning was aan alle kanten toe aan vernieuwing. We hebben van buiten naar binnen gewerkt: timmerwerk, schilderwerk in alle kamers, een nieuwe badkamer met tegelwerk en afwerking met stucwerk. Een transformatie van ouder naar modern en comfortabel.',
-    services: ['totaalrenovatie', 'badkamer', 'schilderwerk', 'timmerwerk', 'tegelwerk', 'stucwerk'],
+    summary: 'Professioneel houtrotherstel en buitenschilderwerk aan karakteristieke woning in Oosterbeek met afwerking in zwart.',
+    description: 'Deze karakteristieke woning in Oosterbeek had ernstige houtrot aan kozijnen en erker. De aangetaste houten delen zijn zorgvuldig verwijderd en volledig vervangen met nieuw houtwerk. Alle aansluitingen zijn hersteld en goed afgedicht om toekomstige vochtproblemen te voorkomen. Na het houtrotherstel is het houtwerk grondig voorbereid, gescaald en opnieuw geschilderd. Kozijnen, deuren, erker en overige houten onderdelen zijn afgewerkt in een diepzwart hoogglans, wat een strak contrast creëert met de lichte gevel. Dit buitenschilderwerk sluit perfect aan bij de klassieke karakteristieke uitstraling van de woning. Het eindresultaat is zowel visueel strak als duurzaam beschermd tegen weersomstandigheden.',
+    services: ['houtrotherstel', 'buitenschilderwerk', 'timmerwerk', 'schilderwerk'],
     images: {
       main: '/images/Oosterbeek (1).jpg',
       gallery: [
