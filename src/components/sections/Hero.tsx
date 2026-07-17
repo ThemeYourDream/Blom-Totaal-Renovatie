@@ -57,8 +57,8 @@ export default function Hero() {
           </div>
 
           {/* Logo */}
-          <div className="hidden lg:flex justify-center items-center">
-            <div className="relative w-80 h-80 flex items-center justify-center">
+          <div className="flex justify-center items-center mt-8 lg:mt-0">
+            <div className="relative w-32 h-32 sm:w-48 sm:h-48 lg:w-80 lg:h-80 flex items-center justify-center">
               <Image
                 src="/images/Logo.png"
                 alt="Blom Totaal Renovatie"
