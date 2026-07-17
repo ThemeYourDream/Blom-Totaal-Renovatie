@@ -44,6 +44,7 @@ export default function ProjectsPage() {
             </p>
           </Link>
         ))}
+      </div>
     </div>
   );
 }
