@@ -7,6 +7,8 @@ import FeaturedProjects from '@/components/sections/FeaturedProjects';
 import SingleContactPoint from '@/components/sections/SingleContactPoint';
 import Methodology from '@/components/sections/Methodology';
 import ReviewsSection from '@/components/sections/ReviewsSection';
+import TrustBadges from '@/components/sections/TrustBadges';
+import CTASection from '@/components/sections/CTASection';
 import ServiceAreas from '@/components/sections/ServiceAreas';
 import OfferteCall from '@/components/sections/OfferteCall';
 import StructuredData from '@/components/StructuredData';
@@ -70,7 +72,9 @@ export default function Home() {
       <FeaturedProjects />
       <SingleContactPoint />
       <Methodology />
+      <CTASection />
       <ReviewsSection />
+      <TrustBadges />
       <ServiceAreas />
       <OfferteCall />
     </>

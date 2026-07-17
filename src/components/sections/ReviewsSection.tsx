@@ -1,54 +1,112 @@
+'use client';
+
 import { reviews } from '@/data/reviews';
 import { siteConfig } from '@/config/site';
+import { useState, useEffect } from 'react';
 
 export default function ReviewsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
+  useEffect(() => {
+    if (!autoPlay) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [autoPlay]);
+
+  const visibleReviews = reviews.slice(currentIndex, currentIndex + 3).concat(
+    currentIndex + 3 > reviews.length ? reviews.slice(0, (currentIndex + 3) % reviews.length) : []
+  );
+
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-brand-light via-white to-white">
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .review-card {
+          animation: fadeIn 0.5s ease-out;
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-6">
             Wat klanten zeggen
           </h2>
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-brand-red font-bold text-xl">★</span>
-              <span className="font-heading font-bold text-lg">
-                {siteConfig.reviews.rating.toFixed(1)} / 5 sterren
-              </span>
+
+          {/* Big stats */}
+          <div className="flex items-center justify-center gap-6 mb-8 flex-wrap">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-brand-red font-bold text-3xl">★</span>
+                <span className="font-heading font-bold text-3xl text-brand-red">
+                  {siteConfig.reviews.rating.toFixed(1)}
+                </span>
+                <span className="text-gray-400">/5</span>
+              </div>
+              <p className="text-sm text-brand-dark/60">
+                {siteConfig.reviews.count} beoordelingen
+              </p>
             </div>
-            <p className="text-sm text-brand-dark/60">
-              Op basis van {siteConfig.reviews.count} beoordelingen
-            </p>
+            <div className="hidden md:block w-px h-16 bg-gray-300" />
             <a
               href={siteConfig.social.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-3 text-sm text-brand-red font-medium hover:underline"
+              className="px-6 py-3 bg-white border-2 border-brand-red text-brand-red font-medium rounded hover:bg-brand-light transition-all hover:shadow-md"
             >
-              Bekijk alle beoordelingen op Google →
+              Google Reviews →
             </a>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.slice(0, 6).map((review) => (
-            <div
-              key={review.id}
-              className="p-6 bg-brand-light rounded-lg border border-brand-red/10"
-            >
-              <div className="flex gap-1 mb-3">
-                {[...Array(review.rating)].map((_, i) => (
-                  <span key={i} className="text-brand-red">★</span>
-                ))}
+        {/* Reviews Carousel */}
+        <div className="relative mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {visibleReviews.map((review, idx) => (
+              <div
+                key={`${review.id}-${idx}`}
+                className="review-card p-6 bg-white rounded-lg border-2 border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all"
+                onMouseEnter={() => setAutoPlay(false)}
+                onMouseLeave={() => setAutoPlay(true)}
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <span key={i} className="text-brand-red text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-brand-dark/80 mb-4 italic">
+                  "{review.text}"
+                </p>
+                <p className="font-heading font-bold text-brand-dark">
+                  {review.author}
+                </p>
               </div>
-              <p className="text-sm text-brand-dark/80 mb-4 line-clamp-4">
-                {review.text}
-              </p>
-              <p className="text-sm font-medium text-brand-dark">
-                {review.author}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Navigation dots */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {Array.from({ length: Math.ceil(reviews.length / 3) }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setCurrentIndex(idx * 3);
+                  setAutoPlay(false);
+                }}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  idx === Math.floor(currentIndex / 3)
+                    ? 'bg-brand-red w-8'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to review set ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
