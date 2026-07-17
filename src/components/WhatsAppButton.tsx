@@ -38,7 +38,7 @@ export default function WhatsAppButton() {
           }
         }
         .animate-bounce-up {
-          animation: bounce-up 0.8s ease-in-out;
+          animation: bounce-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
       `}</style>
       <Link
