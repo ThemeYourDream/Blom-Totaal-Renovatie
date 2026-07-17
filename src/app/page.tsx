@@ -43,7 +43,7 @@ export default function Home() {
           '@type': 'LocalBusiness',
           '@id': siteConfig.url,
           name: siteConfig.name,
-          image: `${siteConfig.url}/images/logo.jpg`,
+          image: `${siteConfig.url}${siteConfig.logo}`,
           description: siteConfig.description,
           url: siteConfig.url,
           telephone: siteConfig.business.phone,

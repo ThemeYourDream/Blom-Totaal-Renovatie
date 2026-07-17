@@ -2,6 +2,7 @@ export const siteConfig = {
   name: 'Blom Totaal Renovatie',
   description: 'Complete renovatie met één duidelijk aanspreekpunt. Blom Totaal Renovatie voert kleine en grote projecten uit in regio Arnhem-Nijmegen.',
   url: 'https://blomtotaalrenovatie.nl',
+  logo: '/images/logo blom.jpg',
 
   business: {
     name: 'Blom Totaal Renovatie',

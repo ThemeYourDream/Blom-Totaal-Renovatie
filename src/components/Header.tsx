@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 import { formatPhoneNumber, getTelLink } from '@/lib/utils';
 import Navigation from './Navigation';
@@ -15,18 +16,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-12 h-12 bg-brand-light rounded flex items-center justify-center">
-              <span className="font-heading font-bold text-sm text-brand-red">BLOM</span>
-            </div>
-            <div className="hidden sm:block">
-              <p className="font-heading font-bold text-sm leading-tight">
-                Blom Totaal
-              </p>
-              <p className="font-heading font-bold text-xs text-brand-red">
-                Renovatie
-              </p>
-            </div>
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+            <Image
+              src="/images/logo blom.jpg"
+              alt="Blom Totaal Renovatie"
+              width={48}
+              height={48}
+              className="rounded"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
