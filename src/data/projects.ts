@@ -25,13 +25,13 @@ export const projects: Project[] = [
   {
     id: 'duiven-renovatie',
     slug: 'duiven-renovatie',
-    title: 'Woningrenovatie Duiven',
+    title: 'Buitenschilderwerk houten gevelbekleding Duiven - Gevelrenovatie',
     place: 'Duiven',
     year: 2024,
     type: ['totaalrenovatie'],
-    summary: 'Complete woningrenovatie met timmerwerk, schilderwerk en nieuwe vloeren.',
-    description: 'Deze woning in Duiven had onderhoudswerkzaamheden nodig. We hebben het geheel gemoderniseerd met nieuw timmerwerk, verse schilderwerk, nieuwe vloeren en stucwerk. Een grondige opknapbeurt die het huis weer jaren mee kan.',
-    services: ['timmerwerk', 'schilderwerk', 'vloeren', 'stucwerk'],
+    summary: 'Professioneel buitenschilderwerk aan houten gevelbekleding in Duiven met weerbestendige afwerking.',
+    description: 'Deze woning in Duiven had een houten gevelbekleding die opnieuw onderhoud nodig had. De verticale houten gevelplanken zijn zorgvuldig gereinigd, voorbereid en opnieuw geschilderd in een diepe donkere kleur. Gelijktijdig zijn de witte dakranden, windveren en kozijnen meegenomen in het buitenschilderwerk. De glanzende weerbestendige afwerking versterkt het karakteristieke uiterlijk van de woning en biedt het hout langdurige bescherming tegen zon, regen en wind. Het contrast tussen het donkere houtwerk, de witte details en het natuurstenen metselwerk creëert een verzorgde en tijdloze uitstraling. Dit onderhoudsschilderwerk zorgt ervoor dat de houten gevelbekleding weer jaren mee kan.',
+    services: ['buitenschilderwerk', 'schilderwerk', 'gevelbekleding', 'timmerwerk'],
     images: {
       main: '/images/Duiven (1).jpg',
       gallery: [
