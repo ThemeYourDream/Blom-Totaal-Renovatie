@@ -31,14 +31,14 @@ export default function WhatsAppButton() {
             transform: translateY(0);
           }
           50% {
-            transform: translateY(-20px);
+            transform: translateY(-80px);
           }
           100% {
             transform: translateY(0);
           }
         }
         .animate-bounce-up {
-          animation: bounce-up 0.6s ease-in-out;
+          animation: bounce-up 0.8s ease-in-out;
         }
       `}</style>
       <Link
