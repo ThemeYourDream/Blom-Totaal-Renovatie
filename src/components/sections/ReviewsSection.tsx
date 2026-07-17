@@ -38,28 +38,21 @@ export default function ReviewsSection() {
             Wat klanten zeggen
           </h2>
 
-          {/* Big stats */}
-          <div className="flex items-center justify-center gap-6 mb-8 flex-wrap">
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="text-brand-red font-bold text-3xl">★</span>
-                <span className="font-heading font-bold text-3xl text-brand-red">
-                  {siteConfig.reviews.rating.toFixed(1)}
-                </span>
-                <span className="text-gray-400">/5</span>
-              </div>
-              <p className="text-sm text-brand-dark/60">
-                {siteConfig.reviews.count} beoordelingen
-              </p>
+          {/* Big stats - focusing on stars not numbers */}
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-brand-red text-4xl">★★★★★</span>
             </div>
-            <div className="hidden md:block w-px h-16 bg-gray-300" />
+            <p className="text-brand-dark/80 mb-6 max-w-2xl mx-auto text-lg">
+              Tevreden huiseigenaren vertrouwen Blom voor hun renovatie
+            </p>
             <a
               href={siteConfig.social.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-white border-2 border-brand-red text-brand-red font-medium rounded hover:bg-brand-light transition-all hover:shadow-md"
+              className="inline-block px-8 py-3 bg-white border-2 border-brand-red text-brand-red font-medium rounded hover:bg-brand-light transition-all hover:shadow-md"
             >
-              Google Reviews →
+              Bekijk reviews op Google →
             </a>
           </div>
         </div>

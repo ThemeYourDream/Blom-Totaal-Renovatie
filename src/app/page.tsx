@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import TrustBar from '@/components/sections/TrustBar';
 import Introduction from '@/components/sections/Introduction';
+import AboutBlom from '@/components/sections/AboutBlom';
 import FeaturedServices from '@/components/sections/FeaturedServices';
 import FeaturedProjects from '@/components/sections/FeaturedProjects';
 import SingleContactPoint from '@/components/sections/SingleContactPoint';
@@ -68,6 +69,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <Introduction />
+      <AboutBlom />
       <FeaturedServices />
       <FeaturedProjects />
       <SingleContactPoint />
