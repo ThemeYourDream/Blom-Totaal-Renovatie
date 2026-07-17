@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { getTelLink, getWhatsAppLink } from '@/lib/utils';
@@ -10,7 +9,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-5 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6 leading-tight">
@@ -56,18 +55,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Logo */}
-          <div className="flex justify-center items-center mt-8 lg:mt-0">
-            <div className="relative w-32 h-32 sm:w-48 sm:h-48 lg:w-80 lg:h-80 flex items-center justify-center">
-              <Image
-                src="/images/Logo.png"
-                alt="Blom Totaal Renovatie"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
