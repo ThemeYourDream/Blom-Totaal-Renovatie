@@ -86,13 +86,13 @@ export const projects: Project[] = [
   {
     id: 'zevenaar-renovatie',
     slug: 'zevenaar-renovatie',
-    title: 'Woningrenovatie Zevenaar',
+    title: 'Gevelrenovatie en gevelbekleding Zevenaar - Vernieuwing geveltop',
     place: 'Zevenaar',
     year: 2024,
     type: ['totaalrenovatie'],
-    summary: 'Renovatie met schilderwerk, tegelwerk, stucwerk en timmerwerk.',
-    description: 'Deze woning in Zevenaar had een flinke opknapbeurt nodig. We hebben het van nieuwe gezicht voorzien met professioneel schilderwerk in alle ruimten, nieuw tegelwerk, stucwerk voor een nette afwerking en timmerwerk waar nodig. Het resultaat is een fris en modern huis.',
-    services: ['schilderwerk', 'tegelwerk', 'stucwerk', 'timmerwerk'],
+    summary: 'Professionele gevelrenovatie en gevelbekleding in Zevenaar met moderne afwerking van de geveltop.',
+    description: 'De woning in Zevenaar had een verouderde geveltop die aan vervanging toe was. De bestaande gevelafwerking is volledig verwijderd, waarna de houten onderconstructie zichtbaar en zorgvuldig kon worden gecontroleerd op beschadigingen. Na inspectie en voorbereiding van het houtwerk is een beschermende geveldoek aangebracht. Vervolgens is een nieuwe moderne gevelbekleding gemonteerd met donkere horizontale delen die de woning een strakke, eigentijdse uitstraling geven. Deze horizontale gevelplanken sluiten mooi aan bij het dakwerk en de bestaande zwarte details van de woning. De randen en aansluitingen zijn vakkundig afgewerkt. Het eindresultaat is een frisse, modern ogende geveltop die de woning weer volledig beschermt tegen regen, wind en weersomstandigheden.',
+    services: ['gevelrenovatie', 'gevelbekleding', 'timmerwerk', 'schilderwerk'],
     images: {
       main: '/images/Zevenaar (1).jpg',
       gallery: [
