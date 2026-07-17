@@ -96,7 +96,7 @@ export default function AboutBlom() {
             <div className="absolute inset-0 flex flex-col justify-end items-center p-6 md:p-8">
               <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-brand-red/10 max-w-sm w-full">
                 <p className="text-brand-dark/80 mb-4 leading-relaxed italic">
-                  "Een renovatie is meer dan alleen werk. Het gaat om het vertrouwen dat je in ons stelt."
+                  "Een renovatie is meer dan alleen werk. Het gaat om het vertrouwen dat u in ons stelt."
                 </p>
                 <p className="font-heading font-bold text-brand-dark">
                   Melvin

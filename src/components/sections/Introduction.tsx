@@ -8,7 +8,7 @@ export default function Introduction() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
-            Schilderwerk, badkamerrenovatie, dakwerk, tegelwerk, Melvin doet veel zelf. En wat hij niet doet, regelt hij met vakmensen die hij kent en vertrouwt. Geen vreemden op je plek, geen communicatieproblemen tussen verschillende partijen.
+            Schilderwerk, badkamerrenovatie, dakwerk, tegelwerk, Melvin doet veel zelf. En wat hij niet doet, regelt hij met vakmensen die hij kent en vertrouwt. Geen vreemden op uw plek, geen communicatieproblemen tussen verschillende partijen.
           </p>
 
           <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">

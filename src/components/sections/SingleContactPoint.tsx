@@ -8,7 +8,7 @@ export default function SingleContactPoint() {
 
         <div className="space-y-6 text-lg leading-relaxed">
           <p>
-            Je hebt één persoon waar je mee praat. Van eerste gesprek tot oplevering. Wij coördineren alles, zodat jij niet met tien verschillende mensen moet kommuniceren.
+            U hebt één persoon waar mee praat. Van eerste gesprek tot oplevering. Wij coördineren alles, zodat u niet met tien verschillende mensen moet kommuniceren.
           </p>
 
           <p>
