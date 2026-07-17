@@ -8,11 +8,13 @@ export default function Hero() {
       className="relative w-full pt-4 pb-8 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: 'url(/images/Hero.png)',
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: 'scroll',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 -z-10" />
 
       <style>{`
         @keyframes fadeInDown {
