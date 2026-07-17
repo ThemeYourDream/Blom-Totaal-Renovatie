@@ -7,14 +7,20 @@
 * {
   @apply scroll-smooth;
   hyphens: none !important;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  word-break: keep-all !important;
+  overflow-wrap: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
 }
 
-p, h1, h2, h3, h4, h5, h6, span, a {
+p, h1, h2, h3, h4, h5, h6, span, a, div {
   hyphens: none !important;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  word-break: keep-all !important;
+  overflow-wrap: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
 }
 
 :root {
