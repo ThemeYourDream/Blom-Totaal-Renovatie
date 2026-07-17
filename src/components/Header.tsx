@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 import { formatPhoneNumber, getTelLink } from '@/lib/utils';
 import Navigation from './Navigation';
