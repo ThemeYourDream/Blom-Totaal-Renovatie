@@ -4,7 +4,16 @@ import { getTelLink, getWhatsAppLink } from '@/lib/utils';
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-gradient-to-br from-brand-light via-white to-white pt-4 pb-8 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+    <section
+      className="relative w-full pt-4 pb-8 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-cover bg-center"
+      style={{
+        backgroundImage: 'url(/images/Hero.png)',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent -z-10" />
+
       <style>{`
         @keyframes fadeInDown {
           from {
@@ -34,19 +43,15 @@ export default function Hero() {
         }
       `}</style>
 
-      {/* Background accent blobs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-8 rounded-full blur-3xl -z-10 animate-pulse" />
-      <div className="absolute bottom-20 left-10 w-64 h-64 bg-brand-red opacity-5 rounded-full blur-3xl -z-10" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6 leading-tight animate-fade-in-down">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight animate-fade-in-down drop-shadow-lg">
               Uw renovatie in goede handen
             </h1>
 
-            <p className="text-lg text-brand-dark/80 mb-8 leading-relaxed animate-fade-in-up">
+            <p className="text-lg text-white/90 mb-8 leading-relaxed animate-fade-in-up drop-shadow-md">
               Van schilderwerk tot complete woningrenovaties — wij doen het allemaal. Met één vast contactpunt, heldere afspraken en vakmannen die goed werk leveren. Voor particulieren, bedrijven en VvE's in de regio Arnhem-Nijmegen.
             </p>
 
