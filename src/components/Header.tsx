@@ -16,7 +16,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
-          <div className="relative w-10 h-10 flex-shrink-0">
+          <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
             <Image
               src="/images/Logo.png"
               alt="Blom Totaal Renovatie"
