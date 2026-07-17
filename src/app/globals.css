@@ -6,6 +6,7 @@
 
 * {
   @apply scroll-smooth;
+  hyphens: none;
 }
 
 :root {
