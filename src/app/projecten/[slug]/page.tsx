@@ -66,13 +66,13 @@ export default async function ProjectPage({ params }: Props) {
           {allImages.map((image, index) => (
             <div
               key={index}
-              className="relative rounded-lg bg-gray-200 h-96"
+              className="relative overflow-hidden rounded-lg bg-gray-200 h-96"
             >
               <Image
                 src={image}
                 alt={`${project.title} foto ${index + 1}`}
                 fill
-                className="object-contain p-4"
+                className="object-cover"
               />
             </div>
           ))}
