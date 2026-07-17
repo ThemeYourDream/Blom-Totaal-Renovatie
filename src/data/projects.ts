@@ -4,13 +4,13 @@ export const projects: Project[] = [
   {
     id: 'beuningen-renovatie',
     slug: 'beuningen-renovatie',
-    title: 'Woningrenovatie Beuningen',
+    title: 'Binnenschilderwerk en onderhoudsschilderwerk Beuningen - Karakteristieke woning',
     place: 'Beuningen',
     year: 2024,
     type: ['totaalrenovatie'],
-    summary: 'Volledige woningrenovatie met schilderwerk, timmerwerk en badkamer.',
-    description: 'Een woning in Beuningen die van kop tot staart was verouderd. We hebben alles aangepakt: schilderwerk, timmerwerk, een volledig nieuwe badkamer met tegelwerk en stucwerk. Het resultaat is een fris, modern huis waar de eigenaar weer graag thuiskomt.',
-    services: ['schilderwerk', 'timmerwerk', 'badkamer', 'tegelwerk', 'stucwerk'],
+    summary: 'Professioneel binnenschilderwerk in Beuningen met afwerking van deuren, kozijnen en sierlijsten in diepzwart.',
+    description: 'Deze bijzondere karakteristieke woning in Beuningen kreeg een compleet binnenschilderwerk upgrade. Het bestaande schilderwerk was verouderd en onverzorgd. We hebben alle klassieke details opnieuw strak afgewerkt: deuren, kozijnen, wandpanelen en sierlijsten zijn geschilderd in diepzwart. De lichte wanden en plafonds zijn eveneens bijgewerkt voor een gelijkmatig geheel. Met zorgvuldig voorwerk en grondige voorbereiding komen alle karakteristieke details van de woning weer optimaal tot hun recht. Het contrast tussen het zwarte houtwerk en de natuurstenen vloer, glazen balustrade en gouden accenten is nu weer scherp en verzorgd. Het resultaat is een fris en stijlvol interieur waarbij de klassieke uitstraling behouden en versterkt is.',
+    services: ['binnenschilderwerk', 'schilderwerk', 'timmerwerk', 'stucwerk'],
     images: {
       main: '/images/Beuningen (1).jpg',
       gallery: [
