@@ -33,7 +33,7 @@ export default function ProjectsPage() {
           <h2 className="font-heading font-bold text-2xl mb-6 text-brand-red">
             {place}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {placeProjects.map((project) => (
               <Link
                 key={project.id}

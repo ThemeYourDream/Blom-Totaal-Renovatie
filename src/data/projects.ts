@@ -12,10 +12,10 @@ export const projects: Project[] = [
     description: 'We hebben deze woning volledig gerenoveerd. Schilderwerk, timmerwerk, en nieuwe badkamer met tegelwerk. Veel aandacht voor detail en perfecte afstemming van alle werkzaamheden.',
     services: ['schilderwerk', 'timmerwerk', 'badkamer', 'tegelwerk', 'stucwerk'],
     images: {
-      main: '/images/Beuningen 1_files/image(1).jpg',
+      main: '/images/Beuningen (1).jpg',
       gallery: [
-        '/images/Beuningen 2_files/image(1).jpg',
-        '/images/Beuningen 3_files/image(1).jpg',
+        '/images/Beuningen (2).jpg',
+        '/images/Beuningen (3).jpg',
       ],
     },
     featured: true,
@@ -32,9 +32,10 @@ export const projects: Project[] = [
     description: 'Volledige renovatie van een woning in Duiven. Timmerwerk, schilderwerk, en afwerking. De woning is nu helemaal vernieuwd en klaar voor vele jaren.',
     services: ['timmerwerk', 'schilderwerk', 'vloeren', 'stucwerk'],
     images: {
-      main: '/images/Duiven 1_files/image(1).jpg',
+      main: '/images/Duiven (1).jpg',
       gallery: [
-        '/images/Duiven 2_files/image(1).jpg',
+        '/images/Duiven (2).jpg',
+        '/images/Duiven (3).jpg',
       ],
     },
     featured: true,
@@ -51,10 +52,10 @@ export const projects: Project[] = [
     description: 'We hebben deze woning compleet vernieuwd. Nieuwe badkamer met tegelwerk, schilderwerk en timmerwerk. Alles is zorgvuldig uitgevoerd met aandacht voor de details.',
     services: ['badkamer', 'tegelwerk', 'schilderwerk', 'timmerwerk', 'stucwerk'],
     images: {
-      main: '/images/Huissen 1_files/image(1).jpg',
+      main: '/images/Huissen (1).jpg',
       gallery: [
-        '/images/Huissen 2_files/image(1).jpg',
-        '/images/Huissen 3_files/image(1).jpg',
+        '/images/Huissen (2).jpg',
+        '/images/Huissen (3).jpg',
       ],
     },
     featured: true,
@@ -71,12 +72,11 @@ export const projects: Project[] = [
     description: 'Totaalrenovatie van een woning in Oosterbeek. We hebben alles aangeraakt: timmerwerk, schilderwerk, badkamerrenovatie, tegelwerk en stucwerk. Het resultaat is een praktisch volledig vernieuwde woning.',
     services: ['totaalrenovatie', 'badkamer', 'schilderwerk', 'timmerwerk', 'tegelwerk', 'stucwerk'],
     images: {
-      main: '/images/Oosterbeek 1_files/image(1).jpg',
+      main: '/images/Oosterbeek (1).jpg',
       gallery: [
-        '/images/Oosterbeek 2_files/image(1).jpg',
-        '/images/Oosterbeek 3_files/image(1).jpg',
-        '/images/Oosterbeek 4_files/image(1).jpg',
-        '/images/Oosterbeek 5_files/image(1).jpg',
+        '/images/Oosterbeek (2).jpg',
+        '/images/Oosterbeek (3).jpg',
+        '/images/Oosterbeek (4).jpg',
       ],
     },
     featured: true,
@@ -93,10 +93,10 @@ export const projects: Project[] = [
     description: 'We hebben deze woning van nieuw gezicht voorzien. Nieuw schilderwerk, tegelwerk, stucwerk en timmerwerk. Een transformatie van een verouderde woning naar een modern en verzorgd huis.',
     services: ['schilderwerk', 'tegelwerk', 'stucwerk', 'timmerwerk'],
     images: {
-      main: '/images/Zevenaar 1_files/image(1).jpg',
+      main: '/images/Zevenaar (1).jpg',
       gallery: [
-        '/images/Zevenaar 2_files/image(1).jpg',
-        '/images/Zevenaar 3_files/image(1).jpg',
+        '/images/Zevenaar (2).jpg',
+        '/images/Zevenaar (3).jpg',
       ],
     },
     featured: true,
