@@ -72,7 +72,7 @@ export default async function ProjectPage({ params }: Props) {
                 src={image}
                 alt={`${project.title} foto ${index + 1}`}
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
+                className="object-cover"
               />
             </div>
           ))}

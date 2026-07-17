@@ -30,7 +30,7 @@ export default function ProjectsPage() {
                 src={project.images.main}
                 alt={project.title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover"
               />
             </div>
             <h3 className="font-heading font-bold text-lg mb-1 group-hover:text-brand-red transition-colors">
