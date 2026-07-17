@@ -49,11 +49,11 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight animate-fade-in-down drop-shadow-lg">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6 leading-tight animate-fade-in-down drop-shadow-md">
               Uw renovatie in goede handen
             </h1>
 
-            <p className="text-lg text-white/90 mb-8 leading-relaxed animate-fade-in-up drop-shadow-md">
+            <p className="text-lg text-brand-dark/90 mb-8 leading-relaxed animate-fade-in-up drop-shadow">
               Van schilderwerk tot complete woningrenovaties — wij doen het allemaal. Met één vast contactpunt, heldere afspraken en vakmannen die goed werk leveren. Voor particulieren, bedrijven en VvE's in de regio Arnhem-Nijmegen.
             </p>
 
