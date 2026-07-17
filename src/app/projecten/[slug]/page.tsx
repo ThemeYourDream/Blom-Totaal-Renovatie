@@ -52,15 +52,35 @@ export default async function ProjectPage({ params }: Props) {
       </div>
 
       {/* Description */}
-      <div className="mb-12 bg-gray-50 p-8 rounded-lg">
+      <div className="mb-16 bg-gray-50 p-8 rounded-lg">
         <h2 className="font-heading font-bold text-2xl mb-4">Over dit project</h2>
         <div className="text-lg text-brand-dark/80 leading-relaxed space-y-4">
           <p>{project.description}</p>
         </div>
       </div>
 
+      {/* Photo Gallery - Large */}
+      <div className="mb-16">
+        <h2 className="font-heading font-bold text-2xl mb-8">Fotogalerij</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {allImages.map((image, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg bg-gray-200 h-96"
+            >
+              <Image
+                src={image}
+                alt={`${project.title} foto ${index + 1}`}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Services */}
-      <div className="mb-12">
+      <div className="mb-16">
         <h2 className="font-heading font-bold text-2xl mb-6">Werkzaamheden</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {project.services.map((service) => (
@@ -69,26 +89,6 @@ export default async function ProjectPage({ params }: Props) {
               className="bg-brand-light border border-brand-red/20 rounded-lg p-4 text-center"
             >
               <p className="font-medium text-brand-dark">{service}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Photo Gallery */}
-      <div>
-        <h2 className="font-heading font-bold text-2xl mb-6">Fotogalerij</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allImages.map((image, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-lg bg-gray-200 h-64"
-            >
-              <Image
-                src={image}
-                alt={`${project.title} foto ${index + 1}`}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-              />
             </div>
           ))}
         </div>
