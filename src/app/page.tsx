@@ -10,6 +10,7 @@ import Methodology from '@/components/sections/Methodology';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import TrustBadges from '@/components/sections/TrustBadges';
 import CTASection from '@/components/sections/CTASection';
+import FAQ from '@/components/sections/FAQ';
 import ServiceAreas from '@/components/sections/ServiceAreas';
 import OfferteCall from '@/components/sections/OfferteCall';
 import StructuredData from '@/components/StructuredData';
@@ -77,6 +78,7 @@ export default function Home() {
       <CTASection />
       <ReviewsSection />
       <TrustBadges />
+      <FAQ />
       <ServiceAreas />
       <OfferteCall />
     </>
