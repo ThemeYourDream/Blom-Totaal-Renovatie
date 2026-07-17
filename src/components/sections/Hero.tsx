@@ -50,7 +50,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="bg-black/70 backdrop-blur-md rounded-lg p-6 md:p-8 max-w-2xl">
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight animate-fade-in-down">
-              Uw renovatie in goede handen
+              Uw renovatie. Strak geregeld.
             </h1>
 
             <p className="text-lg text-white/95 mb-8 leading-relaxed animate-fade-in-up">
