@@ -41,7 +41,7 @@ export default function Methodology() {
         </h2>
 
         {/* Vertical steps */}
-        <div className="space-y-32">
+        <div className="space-y-12">
           {steps.map((step, index) => (
             <div
               key={step.number}
