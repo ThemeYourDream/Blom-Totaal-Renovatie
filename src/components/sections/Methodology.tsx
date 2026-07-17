@@ -45,7 +45,7 @@ export default function Methodology() {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className={`min-h-screen flex items-center justify-center transition-all duration-500 ${
+              className={`py-24 flex items-center justify-center transition-all duration-500 ${
                 index <= activeStep ? 'opacity-100' : 'opacity-30'
               }`}
             >
