@@ -130,7 +130,7 @@ export default function Footer() {
                 className="inline-block hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
-                <Image src="/images/Instagram logo footer.png" alt="Instagram" width={28} height={28} style={{ borderRadius: '4px' }} />
+                <Image src="/images/instagram-logo-footer.png" alt="Instagram" width={28} height={28} style={{ borderRadius: '4px' }} />
               </a>
               <a
                 href={siteConfig.social.facebook}
