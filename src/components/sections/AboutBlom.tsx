@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutBlom() {
   return (
@@ -79,20 +80,22 @@ export default function AboutBlom() {
             </Link>
           </div>
 
-          {/* Right: Visual */}
-          <div className="relative h-96 md:h-full min-h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 to-brand-red/5 rounded-2xl" />
-            <div className="absolute top-0 right-0 w-48 h-48 bg-brand-red opacity-5 rounded-full blur-3xl" />
+          {/* Right: Image with Quote Overlay */}
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/about-blom.jpg"
+              alt="Blom Totaal Renovatie"
+              fill
+              className="object-cover"
+            />
 
-            <div className="relative h-full flex flex-col justify-center items-center p-8 md:p-12 text-center">
-              <div className="mb-6">
-                <div className="text-6xl md:text-7xl font-heading font-bold text-brand-red/20 mb-4">
-                  Blom
-                </div>
-              </div>
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-brand-red/10 max-w-sm">
-                <p className="text-brand-dark/80 mb-4 leading-relaxed">
+            {/* Quote card */}
+            <div className="absolute inset-0 flex flex-col justify-end items-center p-6 md:p-8">
+              <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-brand-red/10 max-w-sm w-full">
+                <p className="text-brand-dark/80 mb-4 leading-relaxed italic">
                   "Een renovatie is meer dan alleen werk. Het gaat om het vertrouwen dat je in ons stelt."
                 </p>
                 <p className="font-heading font-bold text-brand-dark">
