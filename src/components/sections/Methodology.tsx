@@ -36,7 +36,7 @@ export default function Methodology() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [steps]);
 
   return (
     <section id="methodology-section" className="relative bg-brand-gray">
