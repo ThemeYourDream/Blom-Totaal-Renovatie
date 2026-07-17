@@ -4,6 +4,7 @@ import { siteConfig } from '@/config/site';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -91,6 +92,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <WhatsAppButton />
       </body>
     </html>
   );
