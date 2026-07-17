@@ -48,7 +48,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="bg-black/50 backdrop-blur-sm rounded-lg p-6 md:p-8 max-w-2xl">
+          <div className="bg-black/70 backdrop-blur-md rounded-lg p-6 md:p-8 max-w-2xl">
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight animate-fade-in-down">
               Uw renovatie in goede handen
             </h1>
