@@ -1,18 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 export default function Methodology() {
   const [activeStep, setActiveStep] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
-  const steps = [
+  const steps = useMemo(() => [
     { number: '1', title: 'Kennismaking', description: 'We leren u en uw project kennen', details: 'Persoonlijk contact met u als klant. Wij nemen de tijd om alles goed te begrijpen.' },
     { number: '2', title: 'Opname op locatie', description: 'Grondige inspectie en meting', details: 'We bezoeken ter plaatse en maken een gedetailleerde opname van het werk.' },
     { number: '3', title: 'Duidelijke offerte', description: 'Heldere en eerlijke offerte', details: 'Transparante prijsopgave zonder verrassingen. Alles duidelijk uitgelegd.' },
     { number: '4', title: 'Planning en uitvoering', description: 'Afgestemd op uw wensen', details: 'Vakkundig werk met duidelijke planning en regelmatig contact.' },
     { number: '5', title: 'Oplevering', description: 'Nette en zorgvuldige afwerking', details: 'Volledig afgewerkt werk. U bent tevreden en we hebben het beloofd werk gedaan.' },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +36,7 @@ export default function Methodology() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [steps]);
+  }, []);
 
   return (
     <section id="methodology-section" className="relative bg-brand-gray">
