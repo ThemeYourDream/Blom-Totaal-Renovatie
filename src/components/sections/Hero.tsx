@@ -5,7 +5,7 @@ import { getTelLink, getWhatsAppLink } from '@/lib/utils';
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-gradient-to-br from-brand-light to-white pt-32 pb-16 md:pt-40 md:pb-24">
+    <section className="relative w-full bg-gradient-to-br from-brand-light to-white pt-4 pb-8 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-5 rounded-full blur-3xl -z-10" />
 
