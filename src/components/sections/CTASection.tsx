@@ -10,7 +10,7 @@ export default function CTASection() {
           Zin in een goed gesprek?
         </h2>
         <p className="text-lg mb-8 text-red-50 max-w-2xl mx-auto">
-          Bel ons of vraag een offerte aan. Geen druk, geen verplichtingen . we gaan erover praten en kijken hoe we je kunnen helpen.
+          Bel ons of vraag een offerte aan. Geen druk, geen verplichtingen; we gaan erover praten en kijken hoe we je kunnen helpen.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

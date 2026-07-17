@@ -37,11 +37,11 @@ export default function AboutBlom() {
             </h2>
 
             <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
-              Melvin startte Blom Totaal Renovatie met een simpel ideaal: huiseigenaren helpen hun droomhuis te realiseren. Niet met grote beloftes, maar met eerlijk werk en duidelijke communicatie.
+              Melvin startte Blom Totaal Renovatie met een simpel ideaal: huiseigenaren helpen hun droomhuis te realiseren. Niet met grote beloften, maar met eerlijk werk en duidelijke communicatie.
             </p>
 
             <p className="text-lg text-brand-dark/80 mb-8 leading-relaxed">
-              Elk project wordt persoonlijk aangestuurd. Van eerste gesprek tot oplevering . u spreekt met diegene die het werk doet, niet met een callcenter. Dat maakt het verschil. Dat maakt het beter.
+              Elk project wordt persoonlijk aangestuurd. Van eerste gesprek tot oplevering, u spreekt met diegene die het werk doet, niet met een callcenter. Dat maakt het verschil. Dat maakt het beter.
             </p>
 
             <div className="space-y-4 mb-8">

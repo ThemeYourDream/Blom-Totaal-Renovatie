@@ -54,7 +54,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-white/95 mb-8 leading-relaxed animate-fade-in-up">
-              Van schilderwerk tot complete woningrenovaties . wij doen het allemaal. Met één vast contactpunt, heldere afspraken en vakmannen die goed werk leveren. Voor particulieren, bedrijven en VvE's in de regio Arnhem-Nijmegen.
+              Van schilderwerk tot complete woningrenovaties, wij doen het allemaal. Met één vast contactpunt, heldere afspraken en vakmannen die goed werk leveren. Voor particulieren, bedrijven en VvE's in de regio Arnhem-Nijmegen.
             </p>
 
             {/* CTA Buttons */}

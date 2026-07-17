@@ -7,7 +7,7 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'Hoe verloopt het process?',
+      question: 'Hoe verloopt het proces?',
       answer: 'We beginnen met een persoonlijk gesprek om uw wensen en project goed te begrijpen. Daarna maken we een gedetailleerde opname ter plaatse. Vervolgens sturen we een duidelijke offerte. Als u akkoord gaat, plannen we het werk in en voeren we het uit met regelmatig contact.',
     },
     {
@@ -15,19 +15,19 @@ export default function FAQ() {
       answer: 'Dat verschilt per project. Een badkamerrenovatie kan enkele weken zijn, een volledige woningrenovatie kan maanden zijn. Tijdens de eerste afspraak geven we een realistische planning. Wij houden ons eraan.',
     },
     {
-      question: 'Kan ik tussentijds aanpassingen doen?',
+      question: 'Kunt u tussentijds aanpassingen doen?',
       answer: 'Ja, maar we bespreken dit meteen. Kleine aanpassingen kunnen, maar grote wijzigingen beïnvloeden kosten en planning. We zijn transparant hierover en houden u op de hoogte.',
     },
     {
-      question: 'Wat als ik niet tevreden ben?',
+      question: 'Wat als u niet tevreden ben?',
       answer: 'We voeren werk uit tot u tevreden bent. Dit behoort tot onze standaard. Mocht er iets niet naar wens zijn, herstellen we het. Uw tevredenheid is onze prioriteit.',
     },
     {
-      question: 'Zijn jullie verzekerd?',
+      question: 'Bent u verzekerd?',
       answer: 'Ja, we zijn volledig verzekerd met een aansprakelijkheidsverzekering. Dit geeft u zekerheid en bescherming.',
     },
     {
-      question: 'Welke gebieden dekken jullie?',
+      question: 'Welke gebieden dekt u?',
       answer: 'We werken in de regio Arnhem-Nijmegen en omgeving. We voeren projecten uit voor particulieren, bedrijven en VvE\'s.',
     },
   ];
