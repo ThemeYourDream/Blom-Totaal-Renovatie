@@ -4,7 +4,7 @@ import OfferteForm from '@/components/forms/OfferteForm';
 export const metadata: Metadata = {
   title: 'Offerte aanvragen | Blom Totaal Renovatie',
   description:
-    'Vraag vrijblijvend een offerte aan voor uw werkzaamheden. Voeg foto's toe en wij nemen contact met u op.',
+    'Vraag vrijblijvend een offerte aan voor uw werkzaamheden. Voeg fotos toe en wij nemen contact met u op.',
 };
 
 export default function OffertePage() {

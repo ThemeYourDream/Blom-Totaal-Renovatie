@@ -15,25 +15,14 @@ export default function Introduction() {
             Hierdoor kunnen verschillende disciplines goed op elkaar worden afgestemd, terwijl u als klant één duidelijk aanspreekpunt houdt. Geen gedoe met verschillende aannemer of miscommunicatie tussen partijen — wij coördineren alles voor u.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-            <div className="p-6 bg-brand-light rounded-lg">
-              <h3 className="font-heading font-bold text-xl mb-3 text-brand-red">
-                Voor particulieren
-              </h3>
-              <p className="text-brand-dark/80 text-sm">
-                Van kleine verfwerkzaamheden tot complete woningrenovaties. U krijgt één vast aanspreekpunt en duidelijke afspraken.
-              </p>
-            </div>
-
-            <div className="p-6 bg-brand-light rounded-lg">
-              <h3 className="font-heading font-bold text-xl mb-3 text-brand-red">
-                Voor bedrijven en VvE's
-              </h3>
-              <p className="text-brand-dark/80 text-sm">
-                Vakkundig onderhoud en renovatie met aandacht voor planning en minimale overlast voor bewoners of gebruikers.
-              </p>
-            </div>
-          </div>
+          <div className="bg-brand-light rounded-lg p-8 mt-10">
+          <p className="text-brand-dark/80 mb-6">
+            Wij werken samen met een vast netwerk van vakbekwame medewerkers. Zo kunnen we alles goed op elkaar afstemmen — of je nu een klein karwei hebt of een complete renovatie.
+          </p>
+          <p className="text-brand-dark/80">
+            Voor particulieren, bedrijven of VvE's: je hebt één contact bij ons. Geen miscommunicatie, geen gedoe met verschillende aannemer. Gewoon duidelijk, eerlijk en vakkundig werk.
+          </p>
+        </div>
         </div>
       </div>
     </section>

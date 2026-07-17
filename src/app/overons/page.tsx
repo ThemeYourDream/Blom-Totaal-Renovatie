@@ -14,26 +14,21 @@ export default function AboutPage() {
       <div className="prose prose-lg max-w-none space-y-6">
         <h2 className="font-heading font-bold text-2xl">Wie zijn wij?</h2>
         <p className="text-lg text-brand-dark/80">
-          Melvin heeft ongeveer zes jaar ervaring binnen renovatie, onderhoud en afwerking. Vanuit Doesburg werkt
-          Blom Totaal Renovatie aan kleine werkzaamheden en complete woningrenovaties.
+          Wij zijn Blom Totaal Renovatie. Al jaren voeren wij renovaties en onderhoudswerkzaamheden uit vanuit Doesburg. Van klein schilderwerk tot complete woningrenovaties — wij doen het.
         </p>
 
-        <h2 className="font-heading font-bold text-2xl">Onze werkwijze</h2>
+        <h2 className="font-heading font-bold text-2xl">Hoe werken wij?</h2>
         <p className="text-lg text-brand-dark/80">
-          Melvin voert veel werkzaamheden zelf uit en werkt daarnaast met een vast netwerk van vakmensen. Hierdoor
-          kunnen meerdere disciplines binnen één project worden gecombineerd. U als klant houdt tijdens het volledige
-          project één duidelijk aanspreekpunt.
+          Veel werk voeren wij zelf uit. Voor gespecialiseerde klussen werken we met vakmensen die we goed kennen. Dat geeft ons flexibiliteit en zorgt ervoor dat alles goed op elkaar afgestemd is. En het betekent dat jij als opdrachtgever één vast aanspreekpunt hebt.
+        </p>
+        <p className="text-lg text-brand-dark/80">
+          Van voorbereiding tot oplevering: wij doen wat wij beloven. Duidelijke afspraken, eerlijke prijzen, netjes werk.
         </p>
 
-        <h2 className="font-heading font-bold text-2xl">Wat wij waarde hechten aan</h2>
-        <ul className="space-y-3 text-lg text-brand-dark/80">
-          <li>✓ Persoonlijk contact</li>
-          <li>✓ Duidelijke afspraken</li>
-          <li>✓ Zorgvuldige voorbereiding</li>
-          <li>✓ Transparante communicatie</li>
-          <li>✓ Goede afstemming van verschillende werkzaamheden</li>
-          <li>✓ Een nette oplevering</li>
-        </ul>
+        <h2 className="font-heading font-bold text-2xl">Dit is belangrijk voor ons</h2>
+        <p className="text-lg text-brand-dark/80">
+          Persoonlijk contact. Duidelijke communicatie van begin tot eind. Goed voorbereide werkzaamheden. Afstemming zodat verschillende disciplines goed in elkaar passen. Vakkundig werk met oog voor detail. En respect voor jouw huis en jouw tijd.
+        </p>
 
         <div className="bg-brand-light rounded-lg p-8 mt-8">
           <h3 className="font-heading font-bold text-xl mb-4">Klaar om te beginnen?</h3>

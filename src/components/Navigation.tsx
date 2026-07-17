@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useState } from 'react';
 
 const navigationItems = [
   { label: 'Home', href: '/' },
@@ -30,8 +29,6 @@ const navigationItems = [
 ];
 
 export default function Navigation() {
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-
   return (
     <>
       {navigationItems.map((item) => (

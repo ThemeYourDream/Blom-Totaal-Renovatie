@@ -20,8 +20,8 @@ export default function TrustBar() {
 
           {/* Experience */}
           <div>
-            <p className="font-heading font-bold text-xl text-brand-red mb-1">~6 jaar</p>
-            <p className="text-sm text-brand-dark/60">Ervaring in de branche</p>
+            <p className="font-heading font-bold text-xl text-brand-red mb-1">Jaren</p>
+            <p className="text-sm text-brand-dark/60">Vakervaring</p>
           </div>
 
           {/* Contact */}

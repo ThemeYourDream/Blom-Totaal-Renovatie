@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
-  const [analyticsAccepted, setAnalyticsAccepted] = useState(false);
 
   useEffect(() => {
     const hasConsent = localStorage.getItem('cookie-consent');
@@ -12,7 +11,6 @@ export default function CookieBanner() {
       setIsVisible(true);
     } else {
       const consent = JSON.parse(hasConsent);
-      setAnalyticsAccepted(consent.analytics);
       loadAnalyticsIfAccepted(consent.analytics);
     }
   }, []);
@@ -20,7 +18,6 @@ export default function CookieBanner() {
   const handleAccept = (analytics: boolean) => {
     const consent = { necessary: true, analytics };
     localStorage.setItem('cookie-consent', JSON.stringify(consent));
-    setAnalyticsAccepted(analytics);
     loadAnalyticsIfAccepted(analytics);
     setIsVisible(false);
   };
@@ -28,9 +25,12 @@ export default function CookieBanner() {
   const loadAnalyticsIfAccepted = (accepted: boolean) => {
     if (accepted && process.env.NEXT_PUBLIC_GA_ID) {
       // Analytics already loaded in layout.tsx with gtag
-      window.gtag?.('consent', 'update', {
-        analytics_storage: accepted ? 'granted' : 'denied',
-      });
+      const gtag = (window as any).gtag;
+      if (gtag) {
+        gtag('consent', 'update', {
+          analytics_storage: accepted ? 'granted' : 'denied',
+        });
+      }
     }
   };
 

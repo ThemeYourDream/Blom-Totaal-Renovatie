@@ -13,11 +13,11 @@ export default function Hero() {
           {/* Text Content */}
           <div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6 leading-tight">
-              Complete renovatie met één duidelijk aanspreekpunt
+              Jouw renovatie, ons afspreekpunt
             </h1>
 
             <p className="text-lg text-brand-dark/80 mb-8 leading-relaxed">
-              Van schilderwerk en stucwerk tot badkamers, aanbouwen en complete woningrenovaties. Blom Totaal Renovatie voert kleine en grote projecten uit voor particulieren, bedrijven en VvE's in regio Arnhem, Nijmegen en daarbuiten.
+              Wij voeren alles uit: van schilderwerk tot complete woningrenovaties. Met één vast contact, duidelijke afspraken en vakmannen die je kunt vertrouwen. Voor particulieren, bedrijven en VvE's in de regio Arnhem-Nijmegen.
             </p>
 
             {/* CTA Buttons */}

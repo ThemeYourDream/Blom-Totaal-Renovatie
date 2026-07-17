@@ -20,8 +20,8 @@ export default function Header() {
             <Image
               src="/images/logo blom.jpg"
               alt="Blom Totaal Renovatie"
-              width={48}
-              height={48}
+              width={80}
+              height={80}
               className="rounded"
               priority
             />

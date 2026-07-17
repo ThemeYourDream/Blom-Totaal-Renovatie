@@ -124,9 +124,34 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
-            <p>&copy; {currentYear} {siteConfig.name}. Alle rechten voorbehouden.</p>
-            <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            {/* Left: Copyright */}
+            <p className="text-sm text-gray-300">&copy; {currentYear} {siteConfig.name}. Alle rechten voorbehouden.</p>
+
+            {/* Center: Social Media */}
+            <div className="flex gap-6 text-center">
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg hover:text-brand-red transition-colors font-medium"
+                aria-label="Instagram"
+              >
+                Instagram
+              </a>
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg hover:text-brand-red transition-colors font-medium"
+                aria-label="Facebook"
+              >
+                Facebook
+              </a>
+            </div>
+
+            {/* Right: Legal */}
+            <div className="flex gap-4 text-sm text-gray-300">
               <Link href="/privacy" className="hover:text-brand-red transition-colors">
                 Privacy
               </Link>

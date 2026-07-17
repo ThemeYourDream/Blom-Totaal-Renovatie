@@ -36,8 +36,8 @@ function checkRateLimit(ip: string): boolean {
 }
 
 // Get client IP
-function getClientIP(): string {
-  const headersList = headers();
+async function getClientIP(): Promise<string> {
+  const headersList = await headers();
   return (
     headersList.get('x-forwarded-for')?.split(',')[0] ||
     headersList.get('x-real-ip') ||
@@ -58,7 +58,7 @@ export async function submitOfferteForm(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     // Rate limiting
-    const ip = getClientIP();
+    const ip = await getClientIP();
     if (!checkRateLimit(ip)) {
       return { success: false, error: 'Te veel aanvragen. Probeer later opnieuw.' };
     }
@@ -94,10 +94,9 @@ export async function submitOfferteForm(
     // Process files
     const files = formData.getAll('files') as File[];
     const fileUrls: string[] = [];
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     if (files.length > 0) {
-      const resend = new Resend(process.env.RESEND_API_KEY);
-
       for (const file of files) {
         if (file.size > 10 * 1024 * 1024) {
           return { success: false, error: `Bestand ${file.name} is te groot` };
@@ -109,9 +108,7 @@ export async function submitOfferteForm(
         const blobName = `offertes/${timestamp}/${sanitizedName}`;
 
         try {
-          const blob = await put(blobName, buffer, {
-            access: 'private',
-          });
+          const blob = await put(blobName, buffer);
           fileUrls.push(blob.url);
         } catch (err) {
           console.error(`Failed to upload ${file.name}:`, err);
@@ -121,7 +118,6 @@ export async function submitOfferteForm(
     }
 
     // Send emails
-    const resend = new Resend(process.env.RESEND_API_KEY);
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'offerte@blomtotaalrenovatie.nl';
 
     // Email to business
