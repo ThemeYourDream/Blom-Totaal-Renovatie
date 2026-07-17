@@ -41,7 +41,7 @@ export default function AboutBlom() {
             </p>
 
             <p className="text-lg text-brand-dark/80 mb-8 leading-relaxed">
-              Elk project wordt persoonlijk aangestuurd. Van eerste gesprek tot oplevering — u spreekt met diegene die het werk doet, niet met een callcenter. Dat maakt het verschil. Dat maakt het beter.
+              Elk project wordt persoonlijk aangestuurd. Van eerste gesprek tot oplevering . u spreekt met diegene die het werk doet, niet met een callcenter. Dat maakt het verschil. Dat maakt het beter.
             </p>
 
             <div className="space-y-4 mb-8">

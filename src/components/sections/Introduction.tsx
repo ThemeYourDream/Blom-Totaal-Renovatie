@@ -8,7 +8,7 @@ export default function Introduction() {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
-            Schilderwerk, badkamerrenovatie, dakwerk, tegelwerk — Melvin doet veel zelf. En wat hij niet doet, regelt hij met vakmensen die hij kent en vertrouwt. Geen vreemden op je plek, geen communicatieproblemen tussen verschillende partijen.
+            Schilderwerk, badkamerrenovatie, dakwerk, tegelwerk . Melvin doet veel zelf. En wat hij niet doet, regelt hij met vakmensen die hij kent en vertrouwt. Geen vreemden op je plek, geen communicatieproblemen tussen verschillende partijen.
           </p>
 
           <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
@@ -17,10 +17,10 @@ export default function Introduction() {
 
           <div className="bg-brand-light rounded-lg p-8 mt-10">
           <p className="text-brand-dark/80 mb-6">
-            Of het nu gaat om schilderwerk, verbouwing, stukadoor- of tegelwerk — wij kunnen het combineren in één project. Met een vast team die we kennen en vertrouwen, zodat alles soepel verloopt.
+            Of het nu gaat om schilderwerk, verbouwing, stukadoor- of tegelwerk . wij kunnen het combineren in één project. Met een vast team die we kennen en vertrouwen, zodat alles soepel verloopt.
           </p>
           <p className="text-brand-dark/80">
-            Particulier, bedrijf of VvE — u hebt contact met Blom. Met ons. Geen gedoe, geen tussenpersonen. Gewoon goed werk en helder contact van begin tot eind.
+            Particulier, bedrijf of VvE . u hebt contact met Blom. Met ons. Geen gedoe, geen tussenpersonen. Gewoon goed werk en helder contact van begin tot eind.
           </p>
         </div>
         </div>
