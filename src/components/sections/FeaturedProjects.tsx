@@ -36,11 +36,11 @@ export default function FeaturedProjects() {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-8 md:p-12 overflow-hidden">
-          <div className="carousel-scroll flex gap-4 mb-12" style={{ width: 'fit-content' }}>
+        <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-4 md:p-12 overflow-hidden">
+          <div className="carousel-scroll flex gap-2 md:gap-4 mb-12" style={{ width: 'fit-content' }}>
             {carouselProjects.map((project, idx) => (
               <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0">
-                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-40 md:h-48 w-56 md:w-64 group-hover:shadow-xl transition-shadow">
+                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-32 md:h-48 w-40 md:w-64 group-hover:shadow-xl transition-shadow">
                   <Image
                     src={project.images.main}
                     alt={project.title}
