@@ -9,16 +9,16 @@ export default function WhatsAppButton() {
       href={getWhatsAppLink(siteConfig.business.whatsapp)}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 flex items-center justify-center w-16 h-16 hover:scale-110 shadow-lg hover:shadow-xl transition-transform duration-300 z-40"
+      className="fixed bottom-8 right-8 hover:scale-110 shadow-lg hover:shadow-xl transition-transform duration-300 z-40 rounded-full overflow-hidden"
       aria-label="Chat with us on WhatsApp"
       title="WhatsApp"
     >
       <Image
         src="/images/whatsapp_floating_button_128px.png"
         alt="WhatsApp"
-        width={64}
-        height={64}
-        className="rounded-full"
+        width={80}
+        height={80}
+        className="w-20 h-20"
       />
     </Link>
   );
