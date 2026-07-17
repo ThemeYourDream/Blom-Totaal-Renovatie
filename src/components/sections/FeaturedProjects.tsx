@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function FeaturedProjects() {
@@ -9,22 +10,32 @@ export default function FeaturedProjects() {
             Onze projecten
           </h2>
           <p className="text-center text-brand-dark/60 max-w-2xl mx-auto">
-            Zie wat we voor anderen hebben gerealiseerd
+            Zie wat we voor anderen hebben gerealiseerd in de regio
           </p>
         </div>
 
-        <div className="text-center py-16 bg-brand-light rounded-lg border-2 border-dashed border-brand-red/30">
-          <p className="text-brand-dark/50 font-medium mb-3">
-            Projecten worden binnenkort toegevoegd
-          </p>
-          <p className="text-sm text-brand-dark/40 mb-6">
-            Zodra we projectfoto's hebben, tonen we hier ons werk
+        <div className="text-center py-20 bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20">
+          <Link href="/projecten" className="inline-block hover:scale-105 transition-transform">
+            <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-8">
+              <Image
+                src="/images/Logo.png"
+                alt="Blom Totaal Renovatie"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
+          <h3 className="text-2xl font-heading font-bold text-brand-dark mb-4">
+            Projecten in Arnhem, Nijmegen en omgeving
+          </h3>
+          <p className="text-brand-dark/60 mb-8 max-w-md mx-auto">
+            Bekijk ons complete portfolio met renovatieprojecten, gevelwerk en meer
           </p>
           <Link
             href="/projecten"
-            className="inline-block px-6 py-2 bg-brand-red text-white font-medium rounded hover:bg-red-700 transition-colors"
+            className="inline-block px-8 py-3 bg-brand-red text-white font-medium rounded hover:bg-red-700 transition-colors"
           >
-            Alle projecten
+            Alle projecten bekijken
           </Link>
         </div>
       </div>
