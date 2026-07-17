@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { getTelLink, getWhatsAppLink } from '@/lib/utils';
@@ -55,17 +56,16 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Image Placeholder */}
-          <div className="hidden lg:block">
-            <div className="relative w-full h-96 bg-gradient-to-br from-brand-red/10 to-brand-dark/10 rounded-2xl flex items-center justify-center border-2 border-dashed border-brand-red/30">
-              <div className="text-center">
-                <p className="text-brand-dark/50 font-medium">
-                  Projectfoto hier
-                </p>
-                <p className="text-sm text-brand-dark/40 mt-2">
-                  (Voeg echte foto toe)
-                </p>
-              </div>
+          {/* Logo */}
+          <div className="hidden lg:flex justify-center items-center">
+            <div className="relative w-80 h-80 flex items-center justify-center">
+              <Image
+                src="/images/Logo.png"
+                alt="Blom Totaal Renovatie"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </div>
         </div>
