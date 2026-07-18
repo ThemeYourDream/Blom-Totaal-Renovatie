@@ -23,9 +23,8 @@ export default function Hero() {
         backgroundAttachment: 'scroll',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundOffset: `0px ${offsetY}px`,
         transform: `translateY(${offsetY * 0.3}px)`,
-      }}
+      } as React.CSSProperties}
     >
       {/* Overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 -z-10" />
