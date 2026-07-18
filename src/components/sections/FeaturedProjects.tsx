@@ -19,8 +19,9 @@ export default function FeaturedProjects() {
     if (!container) return;
 
     let scrollPos = 0;
-    const speed = 1; // pixels per frame
+    const speed = 0.5; // pixels per frame
     const maxScroll = 1896; // 6 items * 316px
+    let animationId: number;
 
     const scroll = () => {
       if (!isHovering) {
@@ -30,11 +31,12 @@ export default function FeaturedProjects() {
         }
         container.scrollLeft = scrollPos;
       }
+      animationId = requestAnimationFrame(scroll);
     };
 
-    const interval = setInterval(scroll, 50);
+    animationId = requestAnimationFrame(scroll);
 
-    return () => clearInterval(interval);
+    return () => cancelAnimationFrame(animationId);
   }, [isHovering]);
 
   return (
