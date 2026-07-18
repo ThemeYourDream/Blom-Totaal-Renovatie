@@ -4,11 +4,38 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
 import { useScrollReveal } from '@/lib/useScrollReveal';
+import { useEffect, useRef, useState } from 'react';
 
 export default function FeaturedProjects() {
   const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
   const carouselProjects = [...featuredProjects, ...featuredProjects];
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let scrollPos = 0;
+    const speed = 1; // pixels per frame
+    const maxScroll = 1896; // 6 items * 316px
+
+    const scroll = () => {
+      if (!isHovering) {
+        scrollPos += speed;
+        if (scrollPos >= maxScroll) {
+          scrollPos = 0;
+        }
+        container.scrollLeft = scrollPos;
+      }
+    };
+
+    const interval = setInterval(scroll, 50);
+
+    return () => clearInterval(interval);
+  }, [isHovering]);
 
   return (
     <section
@@ -20,44 +47,6 @@ export default function FeaturedProjects() {
         transition: 'all 0.8s ease-out',
       }}
     >
-      <style>{`
-        @keyframes carouselMove {
-          0% { margin-left: 0; }
-          100% { margin-left: -1896px; }
-        }
-
-        .projects-mobile-carousel {
-          overflow: hidden;
-          width: 100%;
-        }
-
-        .projects-track {
-          display: flex;
-          gap: 1rem;
-          animation: carouselMove 60s linear infinite;
-          width: fit-content;
-        }
-
-        .projects-track:hover {
-          animation-play-state: paused;
-        }
-
-        .project-item {
-          flex: 0 0 300px;
-          min-width: 300px;
-        }
-
-        @media (min-width: 768px) {
-          .projects-mobile-carousel {
-            display: none;
-          }
-          .project-item {
-            flex: 0 0 280px;
-            min-width: 280px;
-          }
-        }
-      `}</style>
-
       <div className="mx-auto">
         <div className="px-3 sm:px-6 lg:px-8 mb-6 sm:mb-12">
           <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-2 sm:mb-4">
@@ -68,11 +57,17 @@ export default function FeaturedProjects() {
           </p>
         </div>
 
-        {/* Mobile: Continuous horizontal scroll */}
-        <div className="projects-mobile-carousel px-3">
-          <div className="projects-track">
+        {/* Mobile: Horizontal scroll carousel */}
+        <div className="md:hidden">
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-4 overflow-x-auto scrollbar-hide px-3"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            style={{ scrollBehavior: 'smooth' }}
+          >
             {carouselProjects.map((project, idx) => (
-              <div key={`${project.id}-${idx}`} className="project-item">
+              <div key={`${project.id}-${idx}`} className="flex-shrink-0 w-80">
                 <Link href={`/projecten/${project.slug}`} className="group block">
                   <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 group-hover:shadow-xl transition-shadow">
                     <Image
