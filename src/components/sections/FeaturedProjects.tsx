@@ -63,8 +63,8 @@ export default function FeaturedProjects() {
         <div className="md:hidden -mx-3 px-3 overflow-hidden">
           <div className="carousel-scroll-mobile gap-4 pb-4">
             {carouselProjects.map((project, idx) => (
-              <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0 snap-start">
-                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 w-72 group-hover:shadow-xl transition-shadow">
+              <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0" style={{ width: '300px' }}>
+                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 group-hover:shadow-xl transition-shadow">
                   <Image
                     src={project.images.main}
                     alt={project.title}

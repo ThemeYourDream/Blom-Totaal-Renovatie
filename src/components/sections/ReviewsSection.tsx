@@ -83,7 +83,7 @@ export default function ReviewsSection() {
 
         {/* Reviews Carousel */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-6">
             {visibleReviews.map((review, idx) => (
               <div
                 key={`${review.id}-${idx}`}
