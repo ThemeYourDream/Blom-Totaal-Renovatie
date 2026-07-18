@@ -38,7 +38,7 @@ export default function Methodology() {
         {/* Desktop: Original scroll animation */}
         <div id="methodology-section" className="hidden md:block relative">
           <div className="space-y-0">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div key={step.number} className="py-24 flex items-center justify-center group">
                 <div className="text-center max-w-md">
                   <div className="mb-8 flex justify-center">
