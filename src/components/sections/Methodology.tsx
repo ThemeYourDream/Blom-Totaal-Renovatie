@@ -1,8 +1,11 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useEffect, useState, useRef } from 'react';
 
 export default function Methodology() {
+  const [activeStep, setActiveStep] = useState(-1);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const steps = useMemo(() => [
     { number: '1', title: 'Leren elkaar kennen', description: 'Persoonlijk gesprek over uw plan.' },
     { number: '2', title: 'Kijken goed', description: 'Inspectie ter plaatse, opmeten.' },
@@ -10,6 +13,24 @@ export default function Methodology() {
     { number: '4', title: 'Pakken het aan', description: 'Vakkundig werk, regelmatig contact.' },
     { number: '5', title: 'Klaar en blij', description: 'Werk af, u geniet ervan.' },
   ], []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const stepIndex = parseInt((entry.target as HTMLElement).getAttribute('data-step-index') || '-1');
+          setActiveStep(stepIndex);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (containerRef.current) {
+      const items = containerRef.current.querySelectorAll('[data-step-index]');
+      items.forEach((item) => observer.observe(item));
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="relative bg-brand-gray py-8 sm:py-16 md:py-32">
@@ -19,10 +40,11 @@ export default function Methodology() {
         </h2>
 
         {/* Mobile: Stacked cards with scroll animation */}
-        <div className="md:hidden grid grid-cols-1 gap-6">
+        <div ref={containerRef} className="md:hidden grid grid-cols-1 gap-6">
           {steps.map((step, idx) => (
             <div
               key={step.number}
+              data-step-index={idx}
               className="bg-white rounded-lg p-4 border-l-4 border-brand-red scroll-reveal"
               style={{
                 opacity: 1,
@@ -32,11 +54,10 @@ export default function Methodology() {
             >
               <div className="flex gap-3 items-start">
                 <div
-                  className="w-10 h-10 rounded-full bg-gray-300 text-gray-500 flex items-center justify-center font-bold text-sm flex-shrink-0 transition-all duration-500"
-                  data-step={idx}
+                  className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 transition-all duration-500"
                   style={{
-                    backgroundColor: 'rgb(211, 47, 47)',
-                    color: 'white',
+                    backgroundColor: idx <= activeStep ? 'rgb(211, 47, 47)' : 'rgb(209, 213, 219)',
+                    color: idx <= activeStep ? 'white' : 'rgb(107, 114, 128)',
                   }}
                 >
                   {step.number}
