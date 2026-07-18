@@ -4,15 +4,51 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
 import { useScrollReveal } from '@/lib/useScrollReveal';
+import { useEffect, useRef } from 'react';
 
 export default function FeaturedProjects() {
   const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
   const carouselProjects = [...featuredProjects, ...featuredProjects];
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  // Each item is 300px + 1rem gap = ~316px per item
-  // 6 items = ~1896px for one set
-  const scrollDistance = 1896;
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let animationId: number;
+    let position = 0;
+    const speed = 0.5; // pixels per millisecond
+    const maxScroll = 1896; // Half of total width (6 items)
+
+    const animate = () => {
+      position += speed;
+      if (position >= maxScroll) {
+        position = 0;
+      }
+      track.style.transform = `translateX(-${position}px)`;
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+
+    const handleMouseEnter = () => {
+      cancelAnimationFrame(animationId);
+    };
+
+    const handleMouseLeave = () => {
+      animationId = requestAnimationFrame(animate);
+    };
+
+    track.addEventListener('mouseenter', handleMouseEnter);
+    track.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      track.removeEventListener('mouseenter', handleMouseEnter);
+      track.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
 
   return (
     <section
@@ -24,40 +60,6 @@ export default function FeaturedProjects() {
         transition: 'all 0.8s ease-out',
       }}
     >
-      <style>{`
-        @keyframes carouselScroll {
-          0% { transform: translateX(0px); }
-          100% { transform: translateX(-${scrollDistance}px); }
-        }
-
-        .carousel-container {
-          overflow: hidden;
-          width: 100%;
-        }
-
-        .carousel-track {
-          display: flex;
-          gap: 1rem;
-          animation: carouselScroll 60s linear infinite;
-        }
-
-        .carousel-track:hover {
-          animation-play-state: paused;
-        }
-
-        .carousel-item {
-          flex: 0 0 300px;
-          min-width: 300px;
-        }
-
-        @media (min-width: 768px) {
-          .carousel-item {
-            flex: 0 0 280px;
-            min-width: 280px;
-          }
-        }
-      `}</style>
-
       <div className="mx-auto">
         <div className="px-3 sm:px-6 lg:px-8 mb-6 sm:mb-12">
           <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-2 sm:mb-4">
@@ -69,10 +71,13 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Mobile: Continuous horizontal scroll */}
-        <div className="md:hidden carousel-container px-3">
-          <div className="carousel-track">
+        <div className="md:hidden overflow-hidden px-3">
+          <div
+            ref={trackRef}
+            className="flex gap-4 will-change-transform"
+          >
             {carouselProjects.map((project, idx) => (
-              <div key={`${project.id}-${idx}`} className="carousel-item">
+              <div key={`${project.id}-${idx}`} className="flex-shrink-0 w-80">
                 <Link href={`/projecten/${project.slug}`} className="group block">
                   <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 group-hover:shadow-xl transition-shadow">
                     <Image
