@@ -21,11 +21,6 @@ export default function ReviewsSection() {
     return () => clearInterval(interval);
   }, [autoPlay, totalPages]);
 
-  const visibleReviews = reviews.slice(
-    currentPage * itemsPerPage,
-    currentPage * itemsPerPage + itemsPerPage
-  );
-
   return (
     <section
       ref={ref}
