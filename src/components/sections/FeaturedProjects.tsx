@@ -58,9 +58,9 @@ export default function FeaturedProjects() {
           </p>
         </div>
 
-        {/* Mobile: Full-width horizontal scroll */}
-        <div className="md:hidden overflow-x-auto -mx-3 px-3 snap-x snap-mandatory">
-          <div className="carousel-scroll flex gap-4 pb-4">
+        {/* Mobile: Full-width auto-scroll carousel */}
+        <div className="md:hidden overflow-hidden -mx-3">
+          <div className="carousel-scroll flex gap-4 pb-4 px-3">
             {carouselProjects.map((project, idx) => (
               <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0 snap-start">
                 <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 w-72 group-hover:shadow-xl transition-shadow">

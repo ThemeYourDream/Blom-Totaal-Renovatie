@@ -25,15 +25,16 @@ export default function ServiceAreas() {
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
-          <p className="text-sm text-brand-dark/70 mb-4">
-            Voor passende projecten voeren wij ook werkzaamheden buiten deze regio en door heel Nederland uit.
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-6 text-center">
+          <p className="text-xs sm:text-sm text-brand-dark/70 mb-4">
+            <span className="hidden sm:inline">Voor passende projecten voeren wij ook werkzaamheden buiten deze regio en door heel Nederland uit.</span>
+            <span className="sm:hidden">Werken wij ook buiten deze regio? <strong>Ontdek meer →</strong></span>
           </p>
           <Link
             href="/werkgebied"
-            className="inline-block text-brand-red font-medium hover:underline"
+            className="inline-block text-brand-red font-medium hover:underline text-xs sm:text-sm"
           >
-            Meer informatie over ons werkgebied →
+            Bekijk ons volledige werkgebied →
           </Link>
         </div>
       </div>

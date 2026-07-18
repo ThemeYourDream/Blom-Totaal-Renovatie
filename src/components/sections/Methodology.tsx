@@ -18,12 +18,27 @@ export default function Methodology() {
           Onze werkwijze
         </h2>
 
-        {/* Mobile: Stacked cards */}
-        <div className="md:hidden grid grid-cols-1 gap-3">
-          {steps.map((step) => (
-            <div key={step.number} className="bg-white rounded-lg p-4 border-l-4 border-brand-red">
+        {/* Mobile: Stacked cards with scroll animation */}
+        <div className="md:hidden grid grid-cols-1 gap-6">
+          {steps.map((step, idx) => (
+            <div
+              key={step.number}
+              className="bg-white rounded-lg p-4 border-l-4 border-brand-red scroll-reveal"
+              style={{
+                opacity: 1,
+                transform: 'translateY(0)',
+                transition: 'all 0.6s ease-out',
+              }}
+            >
               <div className="flex gap-3 items-start">
-                <div className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                <div
+                  className="w-10 h-10 rounded-full bg-gray-300 text-gray-500 flex items-center justify-center font-bold text-sm flex-shrink-0 transition-all duration-500"
+                  data-step={idx}
+                  style={{
+                    backgroundColor: 'rgb(211, 47, 47)',
+                    color: 'white',
+                  }}
+                >
                   {step.number}
                 </div>
                 <div className="flex-1">
