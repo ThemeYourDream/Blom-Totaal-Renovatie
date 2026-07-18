@@ -25,22 +25,22 @@ export default function FeaturedServices() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {featured.map((service) => (
             <Link
               key={service.id}
               href={`/diensten/${service.slug}`}
-              className="group p-6 bg-white rounded-lg border border-gray-200 hover:border-brand-red hover:shadow-lg transition-all duration-300"
+              className="group p-4 md:p-6 bg-white rounded-lg border border-gray-200 hover:border-brand-red hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="font-heading font-bold text-lg group-hover:text-brand-red transition-colors">
+              <div className="flex items-start justify-between mb-2 md:mb-3">
+                <h3 className="font-heading font-bold text-base md:text-lg group-hover:text-brand-red transition-colors">
                   {service.title}
                 </h3>
-                <span className="text-brand-red font-heading font-bold text-xl opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-brand-red font-heading font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   →
                 </span>
               </div>
-              <p className="text-sm text-brand-dark/60 group-hover:text-brand-dark transition-colors">
+              <p className="hidden md:block text-sm text-brand-dark/60 group-hover:text-brand-dark transition-colors">
                 {service.shortDescription}
               </p>
             </Link>

@@ -35,15 +35,16 @@ export default function FeaturedProjects() {
           0% { transform: translateX(0); }
           100% { transform: translateX(-${totalItemsDesktop / 2}px); }
         }
-        .carousel-scroll {
-          animation: scroll-carousel-mobile 40s linear infinite;
+        .carousel-scroll-mobile {
+          display: flex;
+          animation: scroll-carousel-mobile 50s linear infinite;
         }
-        @media (min-width: 768px) {
-          .carousel-scroll {
-            animation: scroll-carousel-desktop 45s linear infinite;
-          }
+        .carousel-scroll-desktop {
+          display: flex;
+          animation: scroll-carousel-desktop 55s linear infinite;
         }
-        .carousel-scroll:hover {
+        .carousel-scroll-mobile:hover,
+        .carousel-scroll-desktop:hover {
           animation-play-state: paused;
         }
       `}</style>
@@ -59,8 +60,8 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Mobile: Full-width auto-scroll carousel */}
-        <div className="md:hidden overflow-hidden -mx-3">
-          <div className="carousel-scroll flex gap-4 pb-4 px-3">
+        <div className="md:hidden -mx-3 px-3 overflow-hidden">
+          <div className="carousel-scroll-mobile gap-4 pb-4">
             {carouselProjects.map((project, idx) => (
               <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0 snap-start">
                 <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 w-72 group-hover:shadow-xl transition-shadow">
@@ -79,7 +80,7 @@ export default function FeaturedProjects() {
         {/* Desktop: Original carousel */}
         <div className="hidden md:block px-6 lg:px-8">
           <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-12 overflow-hidden">
-            <div className="carousel-scroll flex gap-4 mb-12">
+            <div className="carousel-scroll-desktop gap-4 mb-12">
               {carouselProjects.map((project, idx) => (
                 <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0">
                   <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 w-64 group-hover:shadow-xl transition-shadow">
