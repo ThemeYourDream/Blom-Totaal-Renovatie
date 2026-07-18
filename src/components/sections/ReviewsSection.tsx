@@ -2,25 +2,39 @@
 
 import { reviews } from '@/data/reviews';
 import { siteConfig } from '@/config/site';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function ReviewsSection() {
   const { ref, isVisible } = useScrollReveal();
-  const [currentPage, setCurrentPage] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-
-  const itemsPerPage = 2;
-  const totalPages = Math.ceil(reviews.length / itemsPerPage);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    if (!autoPlay) return;
-    const interval = setInterval(() => {
-      setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [autoPlay, totalPages]);
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let scrollPos = 0;
+    const speed = 0.3; // pixels per frame (slower = smoother)
+    const cardHeight = 260; // height of each review card + gap
+    const maxScroll = reviews.length * cardHeight; // Total scrollable height
+    let animationId: number;
+
+    const scroll = () => {
+      if (!isHovering) {
+        scrollPos += speed;
+        if (scrollPos >= maxScroll) {
+          scrollPos = 0;
+        }
+        container.scrollTop = scrollPos;
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [isHovering]);
 
   return (
     <section
@@ -56,82 +70,35 @@ export default function ReviewsSection() {
           </div>
         </div>
 
-        {/* Mobile: Vertical carousel with smooth scroll */}
+        {/* Mobile: Vertical scroll carousel */}
         <div className="md:hidden">
-          <style>{`
-            .reviews-carousel {
-              overflow: hidden;
-              position: relative;
-            }
-
-            .reviews-wrapper {
-              display: grid;
-              grid-template-columns: 1fr;
-              gap: 1rem;
-              transition: transform 0.8s ease-in-out;
-              will-change: transform;
-            }
-
-            .review-card {
-              padding: 1rem;
-              background: white;
-              border-radius: 0.5rem;
-              border: 2px solid rgba(211, 47, 47, 0.2);
-              min-height: 220px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-            }
-
-            @media (min-width: 640px) {
-              .review-card {
-                padding: 1.5rem;
-              }
-            }
-          `}</style>
-
-          <div className="reviews-carousel">
-            <div
-              ref={wrapperRef}
-              className="reviews-wrapper"
-              style={{
-                transform: `translateY(${-currentPage * 240}px)`,
-              }}
-            >
-              {reviews.map((review) => (
-                <div key={review.id} className="review-card">
-                  <div className="flex gap-1 mb-3 sm:mb-4">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <span key={i} className="text-brand-red text-lg">★</span>
-                    ))}
-                  </div>
-                  <p className="text-xs sm:text-sm text-brand-dark/80 mb-3 sm:mb-4 italic leading-relaxed">
-                    "{review.text}"
-                  </p>
-                  <p className="font-heading font-bold text-sm text-brand-dark">
-                    {review.author}
-                  </p>
+          <div
+            ref={scrollContainerRef}
+            className="flex flex-col gap-4 overflow-y-auto h-96 px-0"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            style={{ scrollBehavior: 'smooth' }}
+          >
+            {/* Double the reviews for infinite loop effect */}
+            {[...reviews, ...reviews].map((review, idx) => (
+              <div
+                key={`${review.id}-${idx}`}
+                className="flex-shrink-0 p-4 sm:p-6 bg-white rounded-lg border-2 border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all min-h-60"
+              >
+                <div className="flex gap-1 mb-3 sm:mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <span key={i} className="text-brand-red text-lg">
+                      ★
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation dots */}
-          <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
-            {Array.from({ length: totalPages }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setCurrentPage(idx);
-                  setAutoPlay(false);
-                }}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all ${
-                  idx === currentPage
-                    ? 'bg-brand-red w-6 sm:w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Go to review page ${idx + 1}`}
-              />
+                <p className="text-xs sm:text-sm text-brand-dark/80 mb-3 sm:mb-4 italic leading-relaxed">
+                  "{review.text}"
+                </p>
+                <p className="font-heading font-bold text-sm text-brand-dark">
+                  {review.author}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -146,7 +113,9 @@ export default function ReviewsSection() {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <span key={i} className="text-brand-red text-lg">★</span>
+                    <span key={i} className="text-brand-red text-lg">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-sm text-brand-dark/80 mb-4 italic leading-relaxed">
