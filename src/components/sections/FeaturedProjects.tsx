@@ -14,7 +14,11 @@ export default function FeaturedProjects() {
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
+    console.log('useEffect running, track found:', !!track);
+    if (!track) {
+      console.warn('Track ref is null');
+      return;
+    }
 
     let animationId: number;
     let position = 0;
