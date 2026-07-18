@@ -10,9 +10,8 @@ export default function ReviewsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
 
-  // Mobile: 2 reviews, Desktop: 3 reviews
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const itemsPerPage = isMobile ? 2 : 3;
+  // Always show 2 on mobile (md:grid-cols-3 handles desktop)
+  const itemsPerPage = 2;
 
   useEffect(() => {
     if (!autoPlay) return;
