@@ -93,7 +93,7 @@ export default function AboutBlom() {
           {/* Right: Image with Quote Overlay */}
           <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden">
             <Image
-              src="/images/about-blom.png"
+              src="/images/About-blom.png"
               alt="Blom Totaal Renovatie"
               fill
               className="object-cover"
