@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Werkgebied | Blom Totaal Renovatie',
-  description: 'We werken in regio Arnhem-Nijmegen en omgeving. Voor passende projecten ook elders in Nederland.',
+  description: 'Wij werken in regio Arnhem-Nijmegen en omgeving. Voor passende projecten ook elders in Nederland.',
 };
 
 export default function ServiceAreasPage() {
@@ -17,7 +17,7 @@ export default function ServiceAreasPage() {
       <div className="prose prose-lg max-w-none">
         <h2 className="font-heading font-bold text-2xl mb-4">Primaire werkgebied</h2>
         <p className="mb-6">
-          We werken regelmatig in de volgende plaatsen:
+          Wij werken regelmatig in de volgende plaatsen:
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
@@ -31,12 +31,12 @@ export default function ServiceAreasPage() {
         <h2 className="font-heading font-bold text-2xl mb-4">Buiten dit gebied</h2>
         <p className="mb-6">
           Voor passende projecten voeren wij ook werkzaamheden buiten deze regio en door heel Nederland uit. Neem
-          gerust contact met ons op als u buiten dit werkgebied bent. We zien graag of we u kunnen helpen.
+          gerust contact met ons op als u buiten dit werkgebied bent. Wij zien graag of wij u kunnen helpen.
         </p>
 
         <h2 className="font-heading font-bold text-2xl mb-4">Waarom regio Arnhem-Nijmegen?</h2>
         <p>
-          Door in deze regio te werken, kennen we de plaatselijke omstandigheden en kunnen we sneller ter plaatse zijn.
+          Door in deze regio te werken, kennen wij de plaatselijke omstandigheden en kunnen wij sneller ter plaatse zijn.
           Dit maakt de communicatie efficiënter en zorgt voor betere afstemming met uw project.
         </p>
       </div>

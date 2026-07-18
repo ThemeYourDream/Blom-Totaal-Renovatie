@@ -19,7 +19,7 @@ export default function AboutPage() {
 
         <h2 className="font-heading font-bold text-2xl">Hoe werken wij?</h2>
         <p className="text-lg text-brand-dark/80">
-          Veel werk voeren wij zelf uit. Voor gespecialiseerde klussen werken we met vakmensen die we goed kennen. Dat geeft ons flexibiliteit en zorgt ervoor dat alles goed op elkaar afgestemd is. En het betekent dat jij als opdrachtgever één vast aanspreekpunt hebt.
+          Veel werk voeren wij zelf uit. Voor gespecialiseerde klussen werken wij met vakmensen die wij goed kennen. Dat geeft ons flexibiliteit en zorgt ervoor dat alles goed op elkaar afgestemd is. En het betekent dat u als opdrachtgever één vast aanspreekpunt hebt.
         </p>
         <p className="text-lg text-brand-dark/80">
           Van voorbereiding tot oplevering: wij doen wat wij beloven. Duidelijke afspraken, eerlijke prijzen, netjes werk.
@@ -27,13 +27,13 @@ export default function AboutPage() {
 
         <h2 className="font-heading font-bold text-2xl">Dit is belangrijk voor ons</h2>
         <p className="text-lg text-brand-dark/80">
-          Persoonlijk contact. Duidelijke communicatie van begin tot eind. Goed voorbereide werkzaamheden. Afstemming zodat verschillende disciplines goed in elkaar passen. Vakkundig werk met oog voor detail. En respect voor jouw huis en jouw tijd.
+          Persoonlijk contact. Duidelijke communicatie van begin tot eind. Goed voorbereide werkzaamheden. Afstemming zodat verschillende disciplines goed in elkaar passen. Vakkundig werk met oog voor detail. En respect voor uw huis en uw tijd.
         </p>
 
         <div className="bg-brand-light rounded-lg p-8 mt-8">
           <h3 className="font-heading font-bold text-xl mb-4">Klaar om te beginnen?</h3>
           <p className="text-brand-dark/80 mb-6">
-            We helpen u graag met uw project. Laat ons weten wat u wilt realiseren en we nemen contact op.
+            Wij helpen u graag met uw project. Laat ons weten wat u wilt realiseren en wij nemen contact op.
           </p>
           <Link
             href="/offerte"

@@ -43,7 +43,7 @@ export default function FeaturedProjects() {
             Onze projecten
           </h2>
           <p className="text-center text-brand-dark/60 max-w-2xl mx-auto">
-            Zie wat we voor anderen hebben gerealiseerd in de regio
+            Zie wat wij voor anderen hebben gerealiseerd in de regio
           </p>
         </div>
 

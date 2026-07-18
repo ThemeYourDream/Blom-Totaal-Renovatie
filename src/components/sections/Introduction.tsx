@@ -17,7 +17,7 @@ export default function Introduction() {
 
           <div className="bg-brand-light rounded-lg p-8 mt-10">
           <p className="text-brand-dark/80 mb-6">
-            Of het nu gaat om schilderwerk, verbouwing, stukadoor- of tegelwerk, wij kunnen het combineren in één project. Met een vast team dat we kennen en vertrouwen, zodat alles soepel verloopt.
+            Of het nu gaat om schilderwerk, verbouwing, stukadoor- of tegelwerk, wij kunnen het combineren in één project. Met een vast team dat wij kennen en vertrouwen, zodat alles soepel verloopt.
           </p>
           <p className="text-brand-dark/80">
             Particulier, bedrijf of VvE, u hebt contact met Blom. Met ons. Geen gedoe, geen tussenpersonen. Gewoon goed werk en helder contact van begin tot eind.

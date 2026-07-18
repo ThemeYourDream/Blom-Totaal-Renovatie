@@ -25,9 +25,9 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="font-heading font-bold text-2xl mb-3">Welke gegevens verzamelen we?</h2>
+          <h2 className="font-heading font-bold text-2xl mb-3">Welke gegevens verzamelen wij?</h2>
           <p className="text-brand-dark/80">
-            Via het offerteformulier verzamelen we de volgende gegevens:
+            Via het offerteformulier verzamelen wij de volgende gegevens:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-brand-dark/80">
             <li>Naam</li>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="font-heading font-bold text-2xl mb-3">Waarvoor gebruiken we uw gegevens?</h2>
+          <h2 className="font-heading font-bold text-2xl mb-3">Waarvoor gebruiken wij uw gegevens?</h2>
           <p className="text-brand-dark/80">
             Uw gegevens worden gebruikt voor:
           </p>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
         <div>
           <h2 className="font-heading font-bold text-2xl mb-3">Derde partijen</h2>
           <p className="text-brand-dark/80">
-            Bij het verwerken van uw gegevens maken we gebruik van:
+            Bij het verwerken van uw gegevens maken wij gebruik van:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-brand-dark/80">
             <li>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
         <div>
           <h2 className="font-heading font-bold text-2xl mb-3">Google Analytics</h2>
           <p className="text-brand-dark/80">
-            Als u toestemming hebt gegeven, gebruiken we Google Analytics om te zien hoe bezoekers onze website
+            Als u toestemming hebt gegeven, gebruiken wij Google Analytics om te zien hoe bezoekers onze website
             gebruiken. Dit helpt ons de website te verbeteren. U kunt uw toestemming voor cookies op elk moment
             aanpassen via de footer.
           </p>

@@ -69,14 +69,14 @@ export default function AboutBlom() {
             </div>
 
             <p className="text-brand-dark/70 mb-8 italic">
-              "Wij geloven niet in grote kantoren en bureaucratie. We geloven in goed werk, helder contact en tevreden klanten. Dat is Blom."
+              "Wij geloven niet in grote kantoren en bureaucratie. Wij geloven in goed werk, helder contact en tevreden klanten. Dat is Blom."
             </p>
 
             <Link
               href="/contacteer-ons/"
               className="inline-block px-8 py-4 bg-brand-red text-white font-heading font-bold rounded hover:bg-red-700 hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              Leren we elkaar kennen?
+              Leren wij elkaar kennen?
             </Link>
           </div>
 

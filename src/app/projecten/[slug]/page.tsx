@@ -98,7 +98,7 @@ export default async function ProjectPage({ params }: Props) {
           Soortgelijk project realiseren?
         </h3>
         <p className="text-lg mb-6">
-          Laat ons weten wat u wilt en we nemen contact op met een vrijblijvende offerte.
+          Laat ons weten wat u wilt en wij nemen contact op met een vrijblijvende offerte.
         </p>
         <Link
           href="/offerte"

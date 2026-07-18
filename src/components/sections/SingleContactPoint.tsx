@@ -8,11 +8,11 @@ export default function SingleContactPoint() {
 
         <div className="space-y-6 text-lg leading-relaxed">
           <p>
-            U hebt één persoon waar mee praat. Van eerste gesprek tot oplevering. Wij coördineren alles, zodat u niet met tien verschillende mensen moet kommuniceren.
+            U hebt één persoon waarmee u praat. Van eerste gesprek tot oplevering. Wij coördineren alles, zodat u niet met tien verschillende mensen moet communiceren.
           </p>
 
           <p>
-            Veel werk doen we zelf. Voor specialistische taken werken we met vertrouwde vakmensen die we goed kennen en op kunnen rekenen.
+            Veel werk doen wij zelf. Voor specialistische taken werken wij met vertrouwde vakmensen die wij goed kennen en op kunnen rekenen.
           </p>
 
           <p>

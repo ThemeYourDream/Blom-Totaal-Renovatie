@@ -75,7 +75,7 @@ export default async function ServicePage({ params }: Props) {
                 Interesse in {service.title.toLowerCase()}?
               </h3>
               <p className="text-sm text-brand-dark/70 mb-6">
-                Laat ons weten wat u wilt realiseren en we nemen contact op.
+                Laat ons weten wat u wilt realiseren en wij nemen contact op.
               </p>
               <Link
                 href="/offerte"

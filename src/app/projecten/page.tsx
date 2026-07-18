@@ -5,7 +5,7 @@ import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
   title: 'Onze projecten | Blom Totaal Renovatie',
-  description: 'Bekijk de projecten die we voor klanten hebben gerealiseerd in Arnhem, Nijmegen en omgeving.',
+  description: 'Bekijk de projecten die wij voor klanten hebben gerealiseerd in Arnhem, Nijmegen en omgeving.',
 };
 
 export default function ProjectsPage() {

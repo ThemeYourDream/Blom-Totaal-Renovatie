@@ -9,7 +9,7 @@ export default function ServiceAreas() {
           Ons werkgebied
         </h2>
         <p className="text-center text-brand-dark/60 max-w-2xl mx-auto mb-12">
-          We werken vooral in de regio Arnhem-Nijmegen
+          Wij werken vooral in de regio Arnhem-Nijmegen
         </p>
 
         <div className="bg-white rounded-lg p-8 mb-8">
