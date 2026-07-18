@@ -21,12 +21,17 @@ export default function FeaturedProjects() {
     const speed = 0.5; // pixels per millisecond
     const maxScroll = 1896; // Half of total width (6 items)
 
+    let frameCount = 0;
     const animate = () => {
       position += speed;
       if (position >= maxScroll) {
         position = 0;
       }
       track.style.transform = `translateX(-${position}px)`;
+      frameCount++;
+      if (frameCount % 60 === 0) {
+        console.log('Projects animating:', position.toFixed(2), 'px');
+      }
       animationId = requestAnimationFrame(animate);
     };
 
