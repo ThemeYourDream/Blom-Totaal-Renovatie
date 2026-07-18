@@ -89,7 +89,7 @@ export default function AboutBlom() {
                   "Een renovatie is meer dan alleen werk. Het gaat om het vertrouwen dat u in ons stelt."
                 </p>
                 <p className="font-heading font-bold text-brand-dark text-sm">Melvin</p>
-                <p className="text-xs text-brand-dark/60">Oprichter Blom</p>
+                <p className="text-xs text-brand-dark/60">Oprichter Blom Totaal Renovatie</p>
               </div>
             </div>
           </div>
