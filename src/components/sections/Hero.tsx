@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { siteConfig } from '@/config/site';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
