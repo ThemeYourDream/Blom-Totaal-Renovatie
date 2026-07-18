@@ -8,35 +8,32 @@ export default function Introduction() {
   return (
     <section
       ref={ref}
-      className="py-16 md:py-24 bg-white"
+      className="py-8 sm:py-12 md:py-24 bg-white"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
         transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
+        <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-6 sm:mb-8 md:mb-12">
           Alles onder één dak
         </h2>
 
-        <div className="prose prose-lg max-w-none">
-          <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
-            Schilderwerk, badkamerrenovatie, dakwerk, tegelwerk, Melvin doet veel zelf. En wat hij niet doet, regelt hij met vakmensen die hij kent en vertrouwt. Geen vreemden op uw plek, geen communicatieproblemen tussen verschillende partijen.
+        <div className="space-y-4 sm:space-y-6">
+          <p className="text-sm sm:text-base text-brand-dark/80 leading-relaxed">
+            Melvin doet veel zelf: schilderwerk, badkamerrenovatie, tegelwerk. Wat hij niet doet, regelt hij met vertrouwde vakmensen. Geen vreemden, geen communicatierompslomp.
           </p>
 
-          <p className="text-lg text-brand-dark/80 mb-6 leading-relaxed">
-            U belt ons. U spreekt met ons. Wij regelen het. Dat is het. Geen detour via verschillende aannemers, geen verwarring over wie voor wat verantwoordelijk is. Wij dragen dat voor u.
+          <p className="text-sm sm:text-base text-brand-dark/80 leading-relaxed">
+            Één vast contactpunt. Heldere afspraken. Duidelijke verantwoordelijkheden. Dat maakt het verschil.
           </p>
 
-          <div className="bg-brand-light rounded-lg p-8 mt-10">
-          <p className="text-brand-dark/80 mb-6">
-            Of het nu gaat om schilderwerk, verbouwing, stukadoor- of tegelwerk, wij kunnen het combineren in één project. Met een vast team dat wij kennen en vertrouwen, zodat alles soepel verloopt.
-          </p>
-          <p className="text-brand-dark/80">
-            Particulier, bedrijf of VvE, u hebt contact met Blom. Met ons. Geen gedoe, geen tussenpersonen. Gewoon goed werk en helder contact van begin tot eind.
-          </p>
-        </div>
+          <div className="bg-brand-light rounded-lg p-4 sm:p-6 mt-6 sm:mt-8">
+            <p className="text-sm sm:text-base text-brand-dark/80 leading-relaxed">
+              Schilderwerk, verbouwing, tegelwerk - alles combineren in één project. Éen vast team, geen gedoe, goed werk van begin tot eind.
+            </p>
+          </div>
         </div>
       </div>
     </section>

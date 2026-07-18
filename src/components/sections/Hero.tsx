@@ -19,7 +19,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full pt-4 pb-8 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-cover bg-center"
+      className="relative w-full pt-6 pb-6 sm:pt-16 md:pt-32 lg:pt-40 overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: 'url(/images/Hero.png)',
         backgroundAttachment: 'scroll',
@@ -28,85 +28,62 @@ export default function Hero() {
         transform: `translateY(${offsetY * 0.3}px)`,
       } as React.CSSProperties}
     >
-      {/* Overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 -z-10" />
 
       <style>{`
         @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in-down {
-          animation: fadeInDown 0.8s ease-out;
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
+        .animate-fade-in-down { animation: fadeInDown 0.8s ease-out; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out 0.2s both; }
       `}</style>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <div className="bg-black/70 backdrop-blur-md rounded-lg p-6 md:p-8 max-w-2xl">
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight animate-fade-in-down">
-              Uw renovatie. Strak geregeld.
-            </h1>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <h1 className="font-heading font-bold text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-3 sm:mb-5 leading-tight animate-fade-in-down">
+            Uw renovatie. Strak geregeld.
+          </h1>
 
-            <p className="text-lg text-white/95 mb-8 leading-relaxed animate-fade-in-up">
-              Van schilderwerk tot complete woningrenovaties, wij doen het allemaal. Met één vast contactpunt, heldere afspraken en vakmannen die goed werk leveren. Voor particulieren, bedrijven en VvE's in de regio Arnhem-Nijmegen.
-            </p>
+          <p className="text-sm sm:text-base md:text-lg text-white/95 mb-5 sm:mb-6 leading-relaxed animate-fade-in-up">
+            Schilderwerk tot complete renovaties. Één vast contactpunt, heldere afspraken, vakmannen die goed werk leveren.
+          </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up">
-              <Link
-                href="/offerte"
-                className="inline-block px-8 py-4 bg-brand-red text-white font-heading font-bold rounded hover:bg-red-700 hover:shadow-lg hover:scale-105 transition-all duration-300 text-center"
-              >
-                Offerte aanvragen
-              </Link>
-              <Link
-                href="/projecten"
-                className="inline-block px-8 py-4 border-2 border-brand-red text-brand-red font-heading font-bold rounded hover:bg-brand-red hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-300 text-center"
-              >
-                Bekijk ons werk
-              </Link>
-            </div>
-
-            {/* Mobile Quick Actions */}
-            <div className="md:hidden flex flex-col gap-2 animate-fade-in-up">
-              <a
-                href={getTelLink(siteConfig.business.phone)}
-                className="flex items-center justify-center gap-2 py-3 bg-brand-red text-white font-medium rounded hover:bg-red-700 hover:shadow-lg transition-all duration-300"
-              >
-                📞 Bel direct
-              </a>
-              <a
-                href={getWhatsAppLink(siteConfig.business.whatsapp)}
-                className="flex items-center justify-center gap-2 py-3 bg-green-500 text-white font-medium rounded hover:bg-green-600 hover:shadow-lg transition-all duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 WhatsApp ons
-              </a>
-            </div>
+          <div className="flex flex-col gap-2 sm:gap-3 animate-fade-in-up">
+            <Link
+              href="/offerte"
+              className="w-full px-4 sm:px-8 py-3 sm:py-4 bg-brand-red text-white font-heading font-bold rounded hover:bg-red-700 hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base"
+            >
+              Offerte aanvragen
+            </Link>
+            <Link
+              href="/projecten"
+              className="w-full px-4 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red font-heading font-bold rounded hover:bg-brand-red hover:text-white hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base"
+            >
+              Bekijk ons werk
+            </Link>
           </div>
 
+          <div className="md:hidden flex flex-col gap-2 mt-3 animate-fade-in-up">
+            <a
+              href={getTelLink(siteConfig.business.phone)}
+              className="flex items-center justify-center gap-2 py-2.5 bg-brand-red text-white font-medium rounded hover:bg-red-700 transition-all text-xs sm:text-sm"
+            >
+              📞 Bel direct
+            </a>
+            <a
+              href={getWhatsAppLink(siteConfig.business.whatsapp)}
+              className="flex items-center justify-center gap-2 py-2.5 bg-green-500 text-white font-medium rounded hover:bg-green-600 transition-all text-xs sm:text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 WhatsApp ons
+            </a>
+          </div>
         </div>
       </div>
     </section>
