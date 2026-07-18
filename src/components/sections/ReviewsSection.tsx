@@ -15,12 +15,10 @@ export default function ReviewsSection() {
     if (!container) return;
 
     let scrollPos = 0;
-    const speed = 0.3; // pixels per frame
-    const cardHeight = 260; // height of each review card + gap
-    const maxScroll = reviews.length * cardHeight; // Total scrollable height
-    let animationId: number;
+    const speed = 1; // pixels per interval
+    const maxScroll = reviews.length * 260; // Total scrollable height
 
-    const scroll = () => {
+    const interval = setInterval(() => {
       if (!isHovering) {
         scrollPos += speed;
         if (scrollPos >= maxScroll) {
@@ -28,12 +26,9 @@ export default function ReviewsSection() {
         }
         container.scrollTop = scrollPos;
       }
-      animationId = requestAnimationFrame(scroll);
-    };
+    }, 30); // Update every 30ms
 
-    animationId = requestAnimationFrame(scroll);
-
-    return () => cancelAnimationFrame(animationId);
+    return () => clearInterval(interval);
   }, [isHovering]);
 
   return (
