@@ -21,21 +21,28 @@ export default function FeaturedProjects() {
       }}
     >
       <style>{`
-        @keyframes projectsScroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-300px * 6 - 1rem * 6)); }
+        @keyframes slideHorizontal {
+          0% {
+            left: 0;
+          }
+          100% {
+            left: -1896px;
+          }
         }
 
         .projects-mobile-carousel {
+          display: block;
           overflow: hidden;
           width: 100%;
+          position: relative;
         }
 
         .projects-track {
           display: flex;
           gap: 1rem;
-          animation: projectsScroll 60s linear infinite;
-          width: max-content;
+          position: relative;
+          left: 0;
+          animation: slideHorizontal 60s linear infinite;
         }
 
         .projects-track:hover {
@@ -48,12 +55,12 @@ export default function FeaturedProjects() {
         }
 
         @media (min-width: 768px) {
+          .projects-mobile-carousel {
+            display: none;
+          }
           .project-item {
             flex: 0 0 280px;
             min-width: 280px;
-          }
-          .projects-mobile-carousel {
-            display: none;
           }
         }
       `}</style>
