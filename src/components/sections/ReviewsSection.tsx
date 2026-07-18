@@ -80,9 +80,7 @@ export default function ReviewsSection() {
                   key={`${review.id}-${idx}`}
                   className="review-card p-4 sm:p-6 bg-white rounded-lg border-2 border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all"
                   onMouseEnter={() => setAutoPlay(false)}
-                  onTouchStart={() => setAutoPlay(false)}
                   onMouseLeave={() => setAutoPlay(true)}
-                  onTouchEnd={() => setAutoPlay(true)}
                 >
                   <div className="flex gap-1 mb-3 sm:mb-4">
                     {[...Array(review.rating)].map((_, i) => (
