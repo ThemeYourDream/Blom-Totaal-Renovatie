@@ -7,11 +7,11 @@ export default function Methodology() {
   const [isVisible, setIsVisible] = useState(false);
 
   const steps = useMemo(() => [
-    { number: '1', title: 'Wij leren elkaar kennen', description: 'Persoonlijk gesprek over uw plan', details: 'We komen langs, drinken koffie, praten over wat u wilt. Geen formulieren, gewoon begrijpen wat u nodig heeft.' },
-    { number: '2', title: 'Wij kijken goed', description: 'Controleren en opmeten', details: 'We inspecteren het werk ter plaatse. Geen verrassingen later. We weten precies wat er nodig is.' },
-    { number: '3', title: 'Helder aanbod', description: 'Eerlijke prijs, duidelijk uitgelegd', details: 'U krijgt een offerte die u snapt. Geen verborgen kosten. Wat u ziet is wat u krijgt.' },
-    { number: '4', title: 'Wij pakken het aan', description: 'Vakkundig werk met duidelijke planning', details: 'Wij voeren het werk uit zoals afgesproken. U hoort regelmatig hoe het gaat. Melvin staat ervoor.' },
-    { number: '5', title: 'Klaar en blij', description: 'Afgewerkt werk, tevreden klant', details: 'Het werk is af. U kunt ervan genieten. We zeggen pas klaar als u tevreden bent.' },
+    { number: '1', title: 'Leren elkaar kennen', description: 'Persoonlijk gesprek', details: 'Wij komen langs, praten over uw plan. Geen formulieren, gewoon begrijpen.' },
+    { number: '2', title: 'Kijken goed', description: 'Controleren en opmeten', details: 'Inspectie ter plaatse. Geen verrassingen. Wij weten precies wat nodig is.' },
+    { number: '3', title: 'Helder aanbod', description: 'Eerlijke prijs', details: 'Offerte die u snapt. Geen verborgen kosten. Wat u ziet is wat u krijgt.' },
+    { number: '4', title: 'Pakken het aan', description: 'Vakkundig werk', details: 'Uitvoering zoals afgesproken. Regelmatig contact. Melvin staat ervoor.' },
+    { number: '5', title: 'Klaar en blij', description: 'Tevreden klant', details: 'Werk af. U geniet ervan. Wij zeggen pas klaar als u tevreden bent.' },
   ], []);
 
   useEffect(() => {
@@ -23,7 +23,6 @@ export default function Methodology() {
       const sectionStart = rect.top;
       const windowHeight = window.innerHeight;
 
-      // Check if section is in view
       const inView = sectionStart < windowHeight && rect.bottom > 0;
       setIsVisible(inView);
 
@@ -40,8 +39,8 @@ export default function Methodology() {
 
   return (
     <section id="methodology-section" className="relative bg-brand-gray">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-24 pt-12 sticky top-0 bg-brand-gray py-8">
+      <div className="max-w-3xl mx-auto px-3 sm:px-6 lg:px-8">
+        <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 md:mb-24 pt-8 sm:pt-12 sticky top-0 bg-brand-gray py-6 sm:py-8">
           Onze werkwijze
         </h2>
 
@@ -50,14 +49,14 @@ export default function Methodology() {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className={`py-24 flex items-center justify-center transition-all duration-500 ${
+              className={`py-4 sm:py-8 md:py-24 flex items-center justify-center transition-all duration-500 ${
                 index <= activeStep ? 'opacity-100' : 'opacity-30'
               }`}
             >
               <div className="text-center max-w-md">
-                <div className="mb-8 flex justify-center">
+                <div className="mb-3 sm:mb-6 flex justify-center">
                   <div
-                    className={`w-24 h-24 rounded-full flex items-center justify-center font-heading font-bold text-4xl transition-colors duration-500 ${
+                    className={`w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center font-heading font-bold text-2xl sm:text-3xl md:text-4xl transition-colors duration-500 ${
                       index <= activeStep
                         ? 'bg-brand-red text-white scale-100'
                         : 'bg-gray-300 text-gray-500 scale-75'
@@ -66,13 +65,13 @@ export default function Methodology() {
                     {step.number}
                   </div>
                 </div>
-                <h3 className="font-heading font-bold text-3xl mb-4 text-brand-dark">
+                <h3 className="font-heading font-bold text-lg sm:text-2xl md:text-3xl mb-2 sm:mb-3 text-brand-dark">
                   {step.title}
                 </h3>
-                <p className="text-lg text-brand-dark/80 mb-4">
+                <p className="text-xs sm:text-base md:text-lg text-brand-dark/80 mb-2 sm:mb-3">
                   {step.description}
                 </p>
-                <p className="text-base text-brand-dark/60">
+                <p className="text-xs sm:text-sm md:text-base text-brand-dark/60">
                   {step.details}
                 </p>
               </div>

@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
-import { getTelLink, getWhatsAppLink } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
@@ -19,7 +18,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full pt-6 pb-6 sm:pt-16 md:pt-32 lg:pt-40 overflow-hidden bg-cover bg-center"
+      className="relative w-full pt-6 pb-24 sm:pt-16 sm:pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: 'url(/images/Hero.png)',
         backgroundAttachment: 'scroll',
@@ -53,37 +52,12 @@ export default function Hero() {
             Schilderwerk tot complete renovaties. Één vast contactpunt, heldere afspraken, vakmannen die goed werk leveren.
           </p>
 
-          <div className="flex flex-col gap-2 sm:gap-3 animate-fade-in-up">
-            <Link
-              href="/offerte"
-              className="w-full px-4 sm:px-8 py-3 sm:py-4 bg-brand-red text-white font-heading font-bold rounded hover:bg-red-700 hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base"
-            >
-              Offerte aanvragen
-            </Link>
-            <Link
-              href="/projecten"
-              className="w-full px-4 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red font-heading font-bold rounded hover:bg-brand-red hover:text-white hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base"
-            >
-              Bekijk ons werk
-            </Link>
-          </div>
-
-          <div className="md:hidden flex flex-col gap-2 mt-3 animate-fade-in-up">
-            <a
-              href={getTelLink(siteConfig.business.phone)}
-              className="flex items-center justify-center gap-2 py-2.5 bg-brand-red text-white font-medium rounded hover:bg-red-700 transition-all text-xs sm:text-sm"
-            >
-              📞 Bel direct
-            </a>
-            <a
-              href={getWhatsAppLink(siteConfig.business.whatsapp)}
-              className="flex items-center justify-center gap-2 py-2.5 bg-green-500 text-white font-medium rounded hover:bg-green-600 transition-all text-xs sm:text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              💬 WhatsApp ons
-            </a>
-          </div>
+          <Link
+            href="/offerte"
+            className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-brand-red text-white font-heading font-bold rounded hover:bg-red-700 hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base animate-fade-in-up"
+          >
+            Offerte aanvragen
+          </Link>
         </div>
       </div>
     </section>

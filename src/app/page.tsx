@@ -14,6 +14,7 @@ import FAQ from '@/components/sections/FAQ';
 import ServiceAreas from '@/components/sections/ServiceAreas';
 import OfferteCall from '@/components/sections/OfferteCall';
 import StructuredData from '@/components/StructuredData';
+import MobileFooter from '@/components/MobileFooter';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -81,6 +82,7 @@ export default function Home() {
       <FAQ />
       <ServiceAreas />
       <OfferteCall />
+      <MobileFooter />
     </>
   );
 }
