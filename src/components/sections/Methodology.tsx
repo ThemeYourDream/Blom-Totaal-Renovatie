@@ -1,104 +1,62 @@
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
+import { useMemo } from 'react';
 
 export default function Methodology() {
-  const [activeStep, setActiveStep] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-
   const steps = useMemo(() => [
-    { number: '1', title: 'Leren elkaar kennen', description: 'Persoonlijk gesprek', details: 'Wij komen langs, praten over uw plan. Geen formulieren, gewoon begrijpen.' },
-    { number: '2', title: 'Kijken goed', description: 'Controleren en opmeten', details: 'Inspectie ter plaatse. Geen verrassingen. Wij weten precies wat nodig is.' },
-    { number: '3', title: 'Helder aanbod', description: 'Eerlijke prijs', details: 'Offerte die u snapt. Geen verborgen kosten. Wat u ziet is wat u krijgt.' },
-    { number: '4', title: 'Pakken het aan', description: 'Vakkundig werk', details: 'Uitvoering zoals afgesproken. Regelmatig contact. Melvin staat ervoor.' },
-    { number: '5', title: 'Klaar en blij', description: 'Tevreden klant', details: 'Werk af. U geniet ervan. Wij zeggen pas klaar als u tevreden bent.' },
+    { number: '1', title: 'Leren elkaar kennen', description: 'Persoonlijk gesprek over uw plan.' },
+    { number: '2', title: 'Kijken goed', description: 'Inspectie ter plaatse, opmeten.' },
+    { number: '3', title: 'Helder aanbod', description: 'Eerlijke prijs, duidelijke offerte.' },
+    { number: '4', title: 'Pakken het aan', description: 'Vakkundig werk, regelmatig contact.' },
+    { number: '5', title: 'Klaar en blij', description: 'Werk af, u geniet ervan.' },
   ], []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('methodology-section');
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const sectionStart = rect.top;
-      const windowHeight = window.innerHeight;
-
-      const inView = sectionStart < windowHeight && rect.bottom > 0;
-      setIsVisible(inView);
-
-      if (inView) {
-        const progress = Math.max(0, Math.min(1, (windowHeight - sectionStart) / (windowHeight + rect.height)));
-        const stepIndex = Math.min(Math.floor(progress * steps.length), steps.length - 1);
-        setActiveStep(stepIndex);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section id="methodology-section" className="relative bg-brand-gray">
-      <div className="max-w-3xl mx-auto px-3 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 md:mb-24 pt-8 sm:pt-12 sticky top-0 bg-brand-gray py-6 sm:py-8">
+    <section className="relative bg-brand-gray py-8 sm:py-16 md:py-32">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12 md:mb-16">
           Onze werkwijze
         </h2>
 
-        {/* Vertical steps */}
-        <div className="space-y-0">
+        {/* Mobile: Stacked cards */}
+        <div className="md:hidden grid grid-cols-1 gap-3">
           {steps.map((step, index) => (
-            <div
-              key={step.number}
-              className={`py-4 sm:py-8 md:py-24 flex items-center justify-center transition-all duration-500 ${
-                index <= activeStep ? 'opacity-100' : 'opacity-30'
-              }`}
-            >
-              <div className="text-center max-w-md">
-                <div className="mb-3 sm:mb-6 flex justify-center">
-                  <div
-                    className={`w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center font-heading font-bold text-2xl sm:text-3xl md:text-4xl transition-colors duration-500 ${
-                      index <= activeStep
-                        ? 'bg-brand-red text-white scale-100'
-                        : 'bg-gray-300 text-gray-500 scale-75'
-                    }`}
-                  >
-                    {step.number}
-                  </div>
+            <div key={step.number} className="bg-white rounded-lg p-4 border-l-4 border-brand-red">
+              <div className="flex gap-3 items-start">
+                <div className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  {step.number}
                 </div>
-                <h3 className="font-heading font-bold text-lg sm:text-2xl md:text-3xl mb-2 sm:mb-3 text-brand-dark">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-base md:text-lg text-brand-dark/80 mb-2 sm:mb-3">
-                  {step.description}
-                </p>
-                <p className="text-xs sm:text-sm md:text-base text-brand-dark/60">
-                  {step.details}
-                </p>
+                <div className="flex-1">
+                  <h3 className="font-heading font-bold text-sm text-brand-dark">{step.title}</h3>
+                  <p className="text-xs text-brand-dark/70 mt-1">{step.description}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Fixed progress dots - only visible in methodology section */}
-      <div
-        className={`hidden md:flex fixed right-8 top-1/2 transform -translate-y-1/2 flex-col gap-4 bg-white px-4 py-6 rounded-full shadow-lg transition-opacity duration-300 ${
-          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
-              index <= activeStep
-                ? 'bg-brand-red text-white scale-125'
-                : 'bg-gray-300 text-gray-500'
-            }`}
-            title={step.title}
-          >
-            {step.number}
+        {/* Desktop: Original scroll animation */}
+        <div id="methodology-section" className="hidden md:block relative">
+          <div className="space-y-0">
+            {steps.map((step, index) => (
+              <div key={step.number} className="py-24 flex items-center justify-center group">
+                <div className="text-center max-w-md">
+                  <div className="mb-8 flex justify-center">
+                    <div className="w-24 h-24 rounded-full bg-brand-red text-white flex items-center justify-center font-heading font-bold text-4xl group-hover:scale-110 transition-transform">
+                      {step.number}
+                    </div>
+                  </div>
+                  <h3 className="font-heading font-bold text-3xl mb-4 text-brand-dark">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg text-brand-dark/80">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
