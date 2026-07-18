@@ -45,7 +45,7 @@ export default function WhatsAppButton() {
         href={getWhatsAppLink(siteConfig.business.whatsapp)}
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 hover:scale-110 shadow-lg hover:shadow-xl transition-transform duration-300 z-40 rounded-full overflow-hidden ${
+        className={`hidden md:fixed bottom-8 right-8 hover:scale-110 shadow-lg hover:shadow-xl transition-transform duration-300 z-40 rounded-full overflow-hidden ${
           isAnimating ? 'animate-bounce-up' : ''
         }`}
         aria-label="Chat with us on WhatsApp"
