@@ -37,12 +37,33 @@ export default function ReviewsSection() {
       }}
     >
       <style>{`
-        @keyframes slideUpReview {
-          from { transform: translateY(30px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+        .reviews-carousel {
+          overflow: hidden;
+          position: relative;
+          min-height: 400px;
         }
+
+        .reviews-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          transition: transform 0.8s ease-in-out;
+          will-change: transform;
+        }
+
         .review-card {
-          animation: slideUpReview 0.8s ease-out;
+          padding: 1rem;
+          background: white;
+          border-radius: 0.5rem;
+          border: 2px solid rgba(211, 47, 47, 0.2);
+          flex-shrink: 0;
+          width: 100%;
+        }
+
+        @media (min-width: 640px) {
+          .review-card {
+            padding: 1.5rem;
+          }
         }
       `}</style>
 
@@ -70,18 +91,17 @@ export default function ReviewsSection() {
           </div>
         </div>
 
-        {/* Reviews Carousel - Vertical on mobile, Grid on desktop */}
-        <div className="relative">
-          {/* Mobile: Vertical carousel */}
-          <div className="md:hidden">
-            <div className="grid grid-cols-1 gap-4 sm:gap-6 min-h-96">
-              {visibleReviews.map((review, idx) => (
-                <div
-                  key={`${review.id}-${idx}`}
-                  className="review-card p-4 sm:p-6 bg-white rounded-lg border-2 border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all"
-                  onMouseEnter={() => setAutoPlay(false)}
-                  onMouseLeave={() => setAutoPlay(true)}
-                >
+        {/* Mobile: Vertical carousel */}
+        <div className="md:hidden">
+          <div className="reviews-carousel">
+            <div
+              className="reviews-wrapper"
+              style={{
+                transform: `translateY(${-currentPage * (itemsPerPage * 220)}px)`,
+              }}
+            >
+              {reviews.map((review) => (
+                <div key={review.id} className="review-card">
                   <div className="flex gap-1 mb-3 sm:mb-4">
                     {[...Array(review.rating)].map((_, i) => (
                       <span key={i} className="text-brand-red text-lg">★</span>
@@ -98,32 +118,8 @@ export default function ReviewsSection() {
             </div>
           </div>
 
-          {/* Desktop: 3-column grid */}
-          <div className="hidden md:block">
-            <div className="grid grid-cols-3 gap-6">
-              {reviews.slice(0, 3).map((review, idx) => (
-                <div
-                  key={`${review.id}-${idx}`}
-                  className="p-6 bg-white rounded-lg border-2 border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all"
-                >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <span key={i} className="text-brand-red text-lg">★</span>
-                    ))}
-                  </div>
-                  <p className="text-sm text-brand-dark/80 mb-4 italic leading-relaxed">
-                    "{review.text}"
-                  </p>
-                  <p className="font-heading font-bold text-sm text-brand-dark">
-                    {review.author}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation dots - Mobile only */}
-          <div className="md:hidden flex items-center justify-center gap-2 mt-6 sm:mt-8">
+          {/* Navigation dots */}
+          <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
             {Array.from({ length: totalPages }).map((_, idx) => (
               <button
                 key={idx}
@@ -138,6 +134,30 @@ export default function ReviewsSection() {
                 }`}
                 aria-label={`Go to review page ${idx + 1}`}
               />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: 3-column grid */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-3 gap-6">
+            {reviews.slice(0, 3).map((review) => (
+              <div
+                key={review.id}
+                className="p-6 bg-white rounded-lg border-2 border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <span key={i} className="text-brand-red text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-sm text-brand-dark/80 mb-4 italic leading-relaxed">
+                  "{review.text}"
+                </p>
+                <p className="font-heading font-bold text-sm text-brand-dark">
+                  {review.author}
+                </p>
+              </div>
             ))}
           </div>
         </div>

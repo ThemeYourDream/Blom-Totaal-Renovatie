@@ -9,11 +9,8 @@ export default function FeaturedProjects() {
   const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
 
-  // Create infinite loop by duplicating projects 3x
-  const carouselProjects = [...featuredProjects, ...featuredProjects, ...featuredProjects];
-
-  // Calculate distance to scroll (1/3 of total = one full set)
-  const scrollDistance = featuredProjects.length * 320;
+  // Create infinite loop: 6 original + 6 duplicates = 12 items
+  const carouselProjects = [...featuredProjects, ...featuredProjects];
 
   return (
     <section
@@ -26,26 +23,40 @@ export default function FeaturedProjects() {
       }}
     >
       <style>{`
-        @keyframes horizontalScroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-1 * var(--scroll-distance))); }
+        @keyframes scrollHorizontal {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
+
+        .carousel-container {
+          overflow: hidden;
+          background: white;
+        }
+
         .carousel-track {
           display: flex;
           gap: 1rem;
-          animation: horizontalScroll 60s linear infinite;
-          will-change: transform;
+          animation: scrollHorizontal 60s linear infinite;
+          width: fit-content;
         }
+
         .carousel-track:hover {
           animation-play-state: paused;
         }
+
         .carousel-item {
-          flex-shrink: 0;
-          width: 300px;
+          flex: 0 0 300px;
+          min-width: 300px;
         }
+
         @media (min-width: 768px) {
           .carousel-item {
-            width: 280px;
+            flex: 0 0 280px;
+            min-width: 280px;
           }
         }
       `}</style>
@@ -61,11 +72,8 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Mobile: Continuous horizontal scroll */}
-        <div className="md:hidden overflow-hidden px-3">
-          <div
-            className="carousel-track"
-            style={{ '--scroll-distance': `${scrollDistance}px` } as React.CSSProperties}
-          >
+        <div className="md:hidden carousel-container px-3">
+          <div className="carousel-track">
             {carouselProjects.map((project, idx) => (
               <div key={`${project.id}-${idx}`} className="carousel-item">
                 <Link href={`/projecten/${project.slug}`} className="group block">
