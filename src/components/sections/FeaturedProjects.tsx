@@ -9,8 +9,11 @@ export default function FeaturedProjects() {
   const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
 
-  // Create infinite loop by duplicating projects multiple times
+  // Create infinite loop by duplicating projects 3x
   const carouselProjects = [...featuredProjects, ...featuredProjects, ...featuredProjects];
+
+  // Calculate distance to scroll (1/3 of total = one full set)
+  const scrollDistance = featuredProjects.length * 320;
 
   return (
     <section
@@ -25,7 +28,7 @@ export default function FeaturedProjects() {
       <style>{`
         @keyframes horizontalScroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-${featuredProjects.length * 320}px)); }
+          100% { transform: translateX(calc(-1 * var(--scroll-distance))); }
         }
         .carousel-track {
           display: flex;
@@ -59,7 +62,10 @@ export default function FeaturedProjects() {
 
         {/* Mobile: Continuous horizontal scroll */}
         <div className="md:hidden overflow-hidden px-3">
-          <div className="carousel-track">
+          <div
+            className="carousel-track"
+            style={{ '--scroll-distance': `${scrollDistance}px` } as React.CSSProperties}
+          >
             {carouselProjects.map((project, idx) => (
               <div key={`${project.id}-${idx}`} className="carousel-item">
                 <Link href={`/projecten/${project.slug}`} className="group block">
