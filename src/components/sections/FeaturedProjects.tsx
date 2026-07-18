@@ -8,9 +8,11 @@ import { useScrollReveal } from '@/lib/useScrollReveal';
 export default function FeaturedProjects() {
   const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
-
-  // Create infinite loop: 6 original + 6 duplicates = 12 items
   const carouselProjects = [...featuredProjects, ...featuredProjects];
+
+  // Each item is 300px + 1rem gap = ~316px per item
+  // 6 items = ~1896px for one set
+  const scrollDistance = 1896;
 
   return (
     <section
@@ -23,25 +25,20 @@ export default function FeaturedProjects() {
       }}
     >
       <style>{`
-        @keyframes scrollHorizontal {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        @keyframes carouselScroll {
+          0% { transform: translateX(0px); }
+          100% { transform: translateX(-${scrollDistance}px); }
         }
 
         .carousel-container {
           overflow: hidden;
-          background: white;
+          width: 100%;
         }
 
         .carousel-track {
           display: flex;
           gap: 1rem;
-          animation: scrollHorizontal 60s linear infinite;
-          width: fit-content;
+          animation: carouselScroll 60s linear infinite;
         }
 
         .carousel-track:hover {

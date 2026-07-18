@@ -2,13 +2,14 @@
 
 import { reviews } from '@/data/reviews';
 import { siteConfig } from '@/config/site';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function ReviewsSection() {
   const { ref, isVisible } = useScrollReveal();
   const [currentPage, setCurrentPage] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const itemsPerPage = 2;
   const totalPages = Math.ceil(reviews.length / itemsPerPage);
@@ -31,37 +32,6 @@ export default function ReviewsSection() {
         transition: 'all 0.8s ease-out',
       }}
     >
-      <style>{`
-        .reviews-carousel {
-          overflow: hidden;
-          position: relative;
-          min-height: 400px;
-        }
-
-        .reviews-wrapper {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          transition: transform 0.8s ease-in-out;
-          will-change: transform;
-        }
-
-        .review-card {
-          padding: 1rem;
-          background: white;
-          border-radius: 0.5rem;
-          border: 2px solid rgba(211, 47, 47, 0.2);
-          flex-shrink: 0;
-          width: 100%;
-        }
-
-        @media (min-width: 640px) {
-          .review-card {
-            padding: 1.5rem;
-          }
-        }
-      `}</style>
-
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="mb-8 sm:mb-12">
           <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
@@ -86,13 +56,46 @@ export default function ReviewsSection() {
           </div>
         </div>
 
-        {/* Mobile: Vertical carousel */}
+        {/* Mobile: Vertical carousel with smooth scroll */}
         <div className="md:hidden">
+          <style>{`
+            .reviews-carousel {
+              overflow: hidden;
+              position: relative;
+            }
+
+            .reviews-wrapper {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 1rem;
+              transition: transform 0.8s ease-in-out;
+              will-change: transform;
+            }
+
+            .review-card {
+              padding: 1rem;
+              background: white;
+              border-radius: 0.5rem;
+              border: 2px solid rgba(211, 47, 47, 0.2);
+              min-height: 220px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            @media (min-width: 640px) {
+              .review-card {
+                padding: 1.5rem;
+              }
+            }
+          `}</style>
+
           <div className="reviews-carousel">
             <div
+              ref={wrapperRef}
               className="reviews-wrapper"
               style={{
-                transform: `translateY(${-currentPage * (itemsPerPage * 220)}px)`,
+                transform: `translateY(${-currentPage * 240}px)`,
               }}
             >
               {reviews.map((review) => (
