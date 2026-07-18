@@ -8,18 +8,14 @@ import { useScrollReveal } from '@/lib/useScrollReveal';
 export default function FeaturedProjects() {
   const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
-  const carouselProjects = [...featuredProjects, ...featuredProjects];
 
-  // Mobile: full viewport width (375px - 24px padding = 327px, minus margins)
-  const itemWidthMobile = 300;
-  const itemWidthDesktop = 256 + 16;
-  const totalItemsMobile = carouselProjects.length * itemWidthMobile;
-  const totalItemsDesktop = carouselProjects.length * itemWidthDesktop;
+  // Create infinite loop by duplicating projects multiple times
+  const carouselProjects = [...featuredProjects, ...featuredProjects, ...featuredProjects];
 
   return (
     <section
       ref={ref}
-      className="py-8 sm:py-16 md:py-24 bg-white overflow-hidden"
+      className="py-8 sm:py-16 md:py-24 bg-white"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -27,25 +23,27 @@ export default function FeaturedProjects() {
       }}
     >
       <style>{`
-        @keyframes scroll-carousel-mobile {
+        @keyframes horizontalScroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-${totalItemsMobile / 2}px); }
+          100% { transform: translateX(calc(-${featuredProjects.length * 320}px)); }
         }
-        @keyframes scroll-carousel-desktop {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-${totalItemsDesktop / 2}px); }
-        }
-        .carousel-scroll-mobile {
+        .carousel-track {
           display: flex;
-          animation: scroll-carousel-mobile 50s linear infinite;
+          gap: 1rem;
+          animation: horizontalScroll 60s linear infinite;
+          will-change: transform;
         }
-        .carousel-scroll-desktop {
-          display: flex;
-          animation: scroll-carousel-desktop 55s linear infinite;
-        }
-        .carousel-scroll-mobile:hover,
-        .carousel-scroll-desktop:hover {
+        .carousel-track:hover {
           animation-play-state: paused;
+        }
+        .carousel-item {
+          flex-shrink: 0;
+          width: 300px;
+        }
+        @media (min-width: 768px) {
+          .carousel-item {
+            width: 280px;
+          }
         }
       `}</style>
 
@@ -59,31 +57,13 @@ export default function FeaturedProjects() {
           </p>
         </div>
 
-        {/* Mobile: Full-width auto-scroll carousel */}
-        <div className="md:hidden -mx-3 px-3 overflow-hidden">
-          <div className="carousel-scroll-mobile gap-4 pb-4">
+        {/* Mobile: Continuous horizontal scroll */}
+        <div className="md:hidden overflow-hidden px-3">
+          <div className="carousel-track">
             {carouselProjects.map((project, idx) => (
-              <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0" style={{ width: '300px' }}>
-                <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 group-hover:shadow-xl transition-shadow">
-                  <Image
-                    src={project.images.main}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop: Original carousel */}
-        <div className="hidden md:block px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-12 overflow-hidden">
-            <div className="carousel-scroll-desktop gap-4 mb-12">
-              {carouselProjects.map((project, idx) => (
-                <Link key={`${project.id}-${idx}`} href={`/projecten/${project.slug}`} className="group flex-shrink-0">
-                  <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 w-64 group-hover:shadow-xl transition-shadow">
+              <div key={`${project.id}-${idx}`} className="carousel-item">
+                <Link href={`/projecten/${project.slug}`} className="group block">
+                  <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 group-hover:shadow-xl transition-shadow">
                     <Image
                       src={project.images.main}
                       alt={project.title}
@@ -91,6 +71,32 @@ export default function FeaturedProjects() {
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
+                  <p className="text-xs sm:text-sm font-medium text-brand-dark mt-2 truncate">
+                    {project.title}
+                  </p>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: Static grid */}
+        <div className="hidden md:block px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-brand-light to-white rounded-lg border-2 border-brand-red/20 p-12 overflow-hidden">
+            <div className="grid grid-cols-3 gap-6 mb-8">
+              {featuredProjects.map((project) => (
+                <Link key={project.id} href={`/projecten/${project.slug}`} className="group">
+                  <div className="relative overflow-hidden rounded-lg bg-gray-200 h-48 group-hover:shadow-xl transition-shadow">
+                    <Image
+                      src={project.images.main}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <p className="text-sm font-medium text-brand-dark mt-2">
+                    {project.title}
+                  </p>
                 </Link>
               ))}
             </div>
