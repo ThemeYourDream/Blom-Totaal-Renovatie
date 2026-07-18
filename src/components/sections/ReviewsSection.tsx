@@ -15,7 +15,7 @@ export default function ReviewsSection() {
     if (!container) return;
 
     let scrollPos = 0;
-    const speed = 0.3; // pixels per frame (slower = smoother)
+    const speed = -0.3; // negative = scroll down (reviews move down)
     const cardHeight = 260; // height of each review card + gap
     const maxScroll = reviews.length * cardHeight; // Total scrollable height
     let animationId: number;
@@ -23,7 +23,7 @@ export default function ReviewsSection() {
     const scroll = () => {
       if (!isHovering) {
         scrollPos += speed;
-        if (scrollPos >= maxScroll) {
+        if (scrollPos <= -maxScroll) {
           scrollPos = 0;
         }
         container.scrollTop = scrollPos;
