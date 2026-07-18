@@ -21,28 +21,21 @@ export default function FeaturedProjects() {
       }}
     >
       <style>{`
-        @keyframes slideHorizontal {
-          0% {
-            left: 0;
-          }
-          100% {
-            left: -1896px;
-          }
+        @keyframes carouselMove {
+          0% { margin-left: 0; }
+          100% { margin-left: -1896px; }
         }
 
         .projects-mobile-carousel {
-          display: block;
           overflow: hidden;
           width: 100%;
-          position: relative;
         }
 
         .projects-track {
           display: flex;
           gap: 1rem;
-          position: relative;
-          left: 0;
-          animation: slideHorizontal 60s linear infinite;
+          animation: carouselMove 60s linear infinite;
+          width: fit-content;
         }
 
         .projects-track:hover {
