@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
-import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function Methodology() {
   const [activeStep, setActiveStep] = useState(0);
