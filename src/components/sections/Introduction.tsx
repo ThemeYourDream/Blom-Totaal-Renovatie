@@ -1,6 +1,20 @@
+'use client';
+
+import { useScrollReveal } from '@/lib/useScrollReveal';
+
 export default function Introduction() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section
+      ref={ref}
+      className="py-16 md:py-24 bg-white"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+      }}
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading font-bold text-3xl md:text-4xl text-center mb-12">
           Alles onder één dak

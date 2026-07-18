@@ -1,6 +1,9 @@
 'use client';
 
+import { useScrollReveal } from '@/lib/useScrollReveal';
+
 export default function TrustBadges() {
+  const { ref, isVisible } = useScrollReveal();
   const badges = [
     {
       icon: (
@@ -37,13 +40,25 @@ export default function TrustBadges() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-brand-light/30 to-white">
+    <section
+      ref={ref}
+      className="py-16 md:py-24 bg-gradient-to-b from-white via-brand-light/30 to-white"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transition: 'opacity 0.8s ease-out',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {badges.map((badge, idx) => (
             <div
               key={idx}
               className="text-center p-6 md:p-8 bg-white rounded-xl shadow-sm hover:shadow-md border border-brand-red/10 hover:border-brand-red/30 transition-all duration-300"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `all 0.6s ease-out ${idx * 0.1}s`,
+              }}
             >
               <div className="mb-4 flex justify-center">{badge.icon}</div>
               <h3 className="font-heading font-bold text-lg text-brand-dark mb-2">{badge.label}</h3>

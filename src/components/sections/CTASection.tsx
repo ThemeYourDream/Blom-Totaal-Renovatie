@@ -1,10 +1,22 @@
+'use client';
+
 import Link from 'next/link';
 import { getTelLink } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function CTASection() {
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-brand-red to-red-700 text-white">
+    <section
+      ref={ref}
+      className="py-16 md:py-24 bg-gradient-to-r from-brand-red to-red-700 text-white"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'scale(1)' : 'scale(0.95)',
+        transition: 'all 0.7s ease-out',
+      }}
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
           Zin in een goed gesprek?

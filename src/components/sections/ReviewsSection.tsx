@@ -3,8 +3,10 @@
 import { reviews } from '@/data/reviews';
 import { siteConfig } from '@/config/site';
 import { useState, useEffect } from 'react';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function ReviewsSection() {
+  const { ref, isVisible } = useScrollReveal();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
 
@@ -21,7 +23,15 @@ export default function ReviewsSection() {
   );
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-brand-light via-white to-white">
+    <section
+      ref={ref}
+      className="py-16 md:py-24 bg-gradient-to-br from-brand-light via-white to-white"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'all 0.8s ease-out',
+      }}
+    >
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }

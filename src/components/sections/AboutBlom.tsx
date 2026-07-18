@@ -1,9 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function AboutBlom() {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-brand-light via-white to-white overflow-hidden">
+    <section
+      ref={ref}
+      className="py-20 md:py-32 bg-gradient-to-br from-brand-light via-white to-white overflow-hidden"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transition: 'opacity 0.8s ease-out',
+      }}
+    >
       <style>{`
         @keyframes slideInLeft {
           from {

@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function FAQ() {
+  const { ref, isVisible } = useScrollReveal();
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
@@ -33,7 +35,15 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section
+      ref={ref}
+      className="py-20 md:py-32 bg-white"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'all 0.8s ease-out',
+      }}
+    >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-brand-dark mb-4">

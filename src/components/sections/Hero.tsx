@@ -1,8 +1,20 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { getTelLink, getWhatsAppLink } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffsetY(window.scrollY * 0.5);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section
       className="relative w-full pt-4 pb-8 md:pt-32 md:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-cover bg-center"
@@ -11,6 +23,8 @@ export default function Hero() {
         backgroundAttachment: 'scroll',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundOffset: `0px ${offsetY}px`,
+        transform: `translateY(${offsetY * 0.3}px)`,
       }}
     >
       {/* Overlay for text readability */}

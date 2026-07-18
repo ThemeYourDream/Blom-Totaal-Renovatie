@@ -1,8 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function FeaturedProjects() {
+  const { ref, isVisible } = useScrollReveal();
   const featuredProjects = projects.filter((p) => p.published).slice(0, 6);
   // Duplicate for seamless loop
   const carouselProjects = [...featuredProjects, ...featuredProjects];
@@ -14,7 +18,15 @@ export default function FeaturedProjects() {
   const totalItemsDesktop = carouselProjects.length * itemWidthDesktop;
 
   return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
+    <section
+      ref={ref}
+      className="py-16 md:py-24 bg-white overflow-hidden"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'all 0.8s ease-out',
+      }}
+    >
       <style>{`
         @keyframes scroll-carousel-mobile {
           0% { transform: translateX(0); }
